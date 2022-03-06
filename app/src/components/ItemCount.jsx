@@ -22,7 +22,7 @@ const ItemCount = (props) => {
     };
 
     const addItem = () => {
-        (props.stock == 0 || counter > props.stock ) ? console.log("No se ejecuta la acción") : props.onAdd();
+        (props.stock === 0 || counter > props.stock ) ? console.log("No se ejecuta la acción") : props.onAdd();
     };
 
     return (
