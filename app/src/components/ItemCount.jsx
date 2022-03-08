@@ -7,7 +7,7 @@ import {
 } from "react";
 
 const ItemCount = (props) => {
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(props.initial);
 
     const uppCounter = () => {
         (counter < props.stock) ? setCounter(counter + 1) : setCounter(props.stock);
@@ -22,7 +22,7 @@ const ItemCount = (props) => {
     };
 
     const addItem = () => {
-        (props.stock == 0 || counter > props.stock ) ? console.log("No se ejecuta la acción") : props.onAdd();
+        (props.stock == 0 || counter > props.stock ) ? console.log("No se ejecuta la acción") : props.onAdd(counter);
     };
 
     return (
