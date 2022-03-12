@@ -5,33 +5,9 @@ import {
 
 //import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
+import DataTravel from "../data/DataTravel"
 
-let travelInfoAPI = [
-    {
-        id: 1,
-        name: "Mendoza",
-        price: 100,
-        pictureUrl: "en construcción"
-    },
-    {
-        id: 2,
-        name: "Bariloche",
-        price: 200,
-        pictureUrl: "en construcción"
-    },
-    {
-        id: 3,
-        name: "Merlo",
-        price: 50,
-        pictureUrl: "en construcción"
-    },
-    {
-        id: 4,
-        name: "Ushuaia",
-        price: 5000,
-        pictureUrl: "en construcción"
-    }
-]
+let travelInfoAPI = DataTravel;
 
 const ItemListContainer = (props) => {
     //const miOnAdd = (count) => { console.log("se ejecuta miOnAdd", count) };
@@ -50,12 +26,10 @@ const ItemListContainer = (props) => {
 
         myPromise.
             then((respondeAPI) => {
-                setTravels(travelInfoAPI);
-                setMsgError("Sin error en API");
-
+                setTravels(respondeAPI);
             })
             .catch((errorAPI) => {
-                setMsgError("Error al cargar los datos...");
+                setMsgError("Error al cargar los datos..." + errorAPI);
 
             })
             .finally(() => {

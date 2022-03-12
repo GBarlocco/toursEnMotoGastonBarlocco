@@ -8,8 +8,7 @@ const CartWidget = () => {
     return (
         <Button
             color="inherit"
-            fontSize="small"
-            startIcon={<ShoppingCartIcon />}
+            startIcon = {<ShoppingCartIcon />}
         >
             Mis compras
         </Button>
