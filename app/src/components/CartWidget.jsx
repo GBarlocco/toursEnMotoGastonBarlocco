@@ -9,6 +9,7 @@ const CartWidget = () => {
         <Button
             color="inherit"
             startIcon = {<ShoppingCartIcon />}
+            size ="small"
         >
             Mis compras
         </Button>

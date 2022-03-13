@@ -3,33 +3,29 @@ import {
     useEffect
 } from "react";
 
-//import ItemCount from "./ItemCount";
-import ItemList from "./ItemList";
+import ItemDetail from "./ItemDetail";
 import dataTravel from "../data/dataTravel"
 
 let travelInfoAPI = dataTravel;
 
-const ItemListContainer = (props) => {
-    //const miOnAdd = (count) => { console.log("se ejecuta miOnAdd", count) };
-
+const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
-    const [travels, setTravels] = useState([]);
+    const [detail, setDetail] = useState([]);
     const [msgError, setMsgError] = useState("");
 
     useEffect(() => {
-        const myPromise = new Promise((res, rej) => {
+        const getItem = new Promise((res, rej) => {
             setTimeout(() => {
                 res(travelInfoAPI);
             }, 2000);
         });
 
-        myPromise.
+        getItem.
             then((respondeAPI) => {
-                setTravels(respondeAPI);
+                setDetail(respondeAPI);
             })
             .catch((errorAPI) => {
                 setMsgError("Error al cargar los datos..." + errorAPI);
-
             })
             .finally(() => {
                 setLoading(false);
@@ -38,12 +34,8 @@ const ItemListContainer = (props) => {
 
     return (
         <>
-            <p>{props.greeting}</p>
-
-            {/*<ItemCount stock ={20} initial = {10} onAdd = {miOnAdd}/>*/}
-
-            {loading ? (<p>Cargando viajes, espere por favor...</p>) : <ItemList travels={travels}/>}
+            {loading ? (<p>Cargando detalles del producto...</p>) :<ItemDetail detail = {detail} />}
         </>
     )
 };
-export default ItemListContainer;
+export default ItemDetailContainer;

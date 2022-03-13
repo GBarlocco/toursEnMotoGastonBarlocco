@@ -5,7 +5,6 @@ Para UI (user interface): se utiliza material UI
 Instalaciones:
 
 *material UI:
-// with npm
 npm i @mui/material @emotion/react @emotion/styled
 
 *Fuente Roboto: se agrega en index.html

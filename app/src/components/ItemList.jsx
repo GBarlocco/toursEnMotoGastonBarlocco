@@ -1,6 +1,5 @@
 import Item from "./Item";
 
-
 const ItemList = (props) => {
     return (
         <>
@@ -13,5 +12,4 @@ const ItemList = (props) => {
         </>
     )
 };
-
 export default ItemList;
