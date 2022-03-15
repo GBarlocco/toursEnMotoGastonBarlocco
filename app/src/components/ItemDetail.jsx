@@ -1,18 +1,70 @@
 import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
+import dataTravel from "../data/dataTravel"
+import ItemCount from "./ItemCount";
+import {
+    Card,
+    CardActionArea,
+    Typography,
+    CardMedia,
+    CardContent,
+    Grid,
+    Box
+} from '@mui/material';
 
-const ItemDetail = (props) => {
+
+const ItemDetail = () => {
+    let travelInfoAPI = dataTravel;
+    const { id } = useParams();
+    const miOnAdd = (count) => { };
+
     return (
         <>
-            <p>Detalle del producto:</p>
-            <p>ID:{props.detail[0].id}</p>
-            <p>Viaje:{props.detail[0].name}</p>
-            <p>$ {props.detail[0].price}</p>
-            <p>img: {props.detail[0].pictureUrl}</p>
-            <p>Descripción: {props.detail[0].description}</p>
-            
-            {toast.info("Contáctanos para saber mas sobre el viaje a " + props.detail[0].name, {
-                position: "bottom-right",
-            })}
+            <Grid container>
+ 
+                <Grid>
+                    <Box display="flex" marginTop={3}>
+                        <Card sx={{ maxWidth: 500, marginLeft: 5 }}>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="350"
+                                    image={travelInfoAPI[id - 1].pictureUrl}
+                                    alt={travelInfoAPI[id - 1].name}
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {travelInfoAPI[id - 1].name}
+                                    </Typography>
+
+                                    <Typography variant="body2" color="text.secondary">
+                                        ID: {travelInfoAPI[id - 1].id}
+                                        <br />
+                                        Viaje: {travelInfoAPI[id - 1].name}
+                                        <br />
+                                        $ {travelInfoAPI[id - 1].price}
+                                        <br />
+                                        Descripción: {travelInfoAPI[id - 1].description}
+                                        <br />
+                                        Categoria: {travelInfoAPI[id - 1].category}
+                                        <br />
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Box>
+                </Grid>
+
+                <Grid>
+                    <Box display="flex" marginTop={3}>
+                        <Card sx={{ marginLeft: 5 }}>
+                            {<ItemCount participants={travelInfoAPI[id - 1].participants} initial={10} onAdd={miOnAdd} />}
+                        </Card>
+                    </Box>
+                </Grid>
+                
+            </Grid>
+            {toast.info("Contáctanos para saber mas sobre el viaje a " + travelInfoAPI[id - 1].name, { position: "bottom-right", })}
         </>
     )
 };

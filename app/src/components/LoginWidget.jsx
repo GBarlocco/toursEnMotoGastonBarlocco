@@ -2,6 +2,8 @@ import {
     Button,
 } from '@mui/material';
 
+import {NavLink } from "react-router-dom";
+
 import LoginIcon from '@mui/icons-material/Login';
 
 const LoginWidget = () => {
@@ -10,8 +12,9 @@ const LoginWidget = () => {
             color="inherit"
             startIcon = {<LoginIcon />}
             size ="small"
+            component={NavLink}
+            to={"login"}
         >
-            Login
         </Button>
     );
 };

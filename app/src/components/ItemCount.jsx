@@ -6,11 +6,13 @@ import {
     useState,
 } from "react";
 
+import { toast } from "react-toastify";
+
 const ItemCount = (props) => {
     const [counter, setCounter] = useState(props.initial);
 
     const uppCounter = () => {
-        (counter < props.stock) ? setCounter(counter + 1) : setCounter(props.stock);
+        (counter < props.participants) ? setCounter(counter + 1) : setCounter(props.participants);
     };
 
     const downCounter = () => {
@@ -22,8 +24,9 @@ const ItemCount = (props) => {
     };
 
     const addItem = () => {
-        (props.stock == 0 || counter > props.stock ) ? console.log("No se ejecuta la acción") : props.onAdd(counter);
+        (props.participants == 0 || counter > props.participants ) ? toast.error("El viaje no se encuentra disponible", {position: "bottom-right"}) : props.onAdd(counter);
     };
+
 
     return (
         <>
@@ -32,7 +35,7 @@ const ItemCount = (props) => {
                 color="primary"
                 size="small"
             >
-                Stock disponible: {props.stock}
+                Lugares disponibles: {props.participants}
             </Button>
 
             <br/>

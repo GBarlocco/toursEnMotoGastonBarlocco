@@ -2,6 +2,7 @@ import {
     useState,
     useEffect
 } from "react";
+import { useParams } from "react-router-dom";
 
 //import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
@@ -15,33 +16,40 @@ const ItemListContainer = (props) => {
     const [loading, setLoading] = useState(true);
     const [travels, setTravels] = useState([]);
     const [msgError, setMsgError] = useState("");
-
+    const {name} = useParams();   
+    const travelFilter = [];     
+    
     useEffect(() => {
-        const myPromise = new Promise((res, rej) => {
+        const getItemList = new Promise((res, rej) => {
             setTimeout(() => {
-                res(travelInfoAPI);
+                travelInfoAPI.map((travel) => {
+                    if (name != undefined){ 
+                        if (travel.category == name){
+                            travelFilter.push(travel);
+                        }
+                    }else{
+                        travelFilter.push(travel)
+                    }
+                })
+                res(travelFilter);
             }, 2000);
         });
 
-        myPromise.
+        getItemList.
             then((respondeAPI) => {
                 setTravels(respondeAPI);
             })
             .catch((errorAPI) => {
                 setMsgError("Error al cargar los datos..." + errorAPI);
-
             })
             .finally(() => {
                 setLoading(false);
             });
-    });
+    },[name]);
 
     return (
         <>
-            <p>{props.greeting}</p>
-
             {/*<ItemCount stock ={20} initial = {10} onAdd = {miOnAdd}/>*/}
-
             {loading ? (<p>Cargando viajes, espere por favor...</p>) : <ItemList travels={travels}/>}
         </>
     )

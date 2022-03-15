@@ -2,16 +2,19 @@ import {
     Button,
 } from '@mui/material';
 
-import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import {NavLink } from "react-router-dom";
+
+import InfoIcon from '@mui/icons-material/Info';
 
 const InfoWidget = () => {
     return (
         <Button
             color="inherit"
-            startIcon = {<AssignmentIndIcon />}
+            startIcon = {<InfoIcon />}
             size ="small"
+            component={NavLink}
+            to={"info"}
         >
-            Sobre nosotros...
         </Button>
     );
 };

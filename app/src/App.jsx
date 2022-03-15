@@ -1,26 +1,22 @@
-import Navbar from "./components/Navbar";
+
 import Header from "./components/Header";
 import Main from "./components/Main"
-import ItemListContainer from "./components/ItemListContainer";
+import Footer from "./components/Footer";
+
+import { BrowserRouter } from "react-router-dom";
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import ItemDetailContainer from "./components/ItemDetailContainer";
 
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Navbar />
-      <ItemListContainer greeting="Web en construcción..." />
-      <Main />
-      <ToastContainer />
-
-      <ItemDetailContainer
-        position="bottom-right"
-      />
-    </>
+    <BrowserRouter>
+        <Header />
+        <Main/>
+        <Footer/>
+        <ToastContainer autoClose={3000}/>
+    </BrowserRouter>
   );
 };
 export default App;
