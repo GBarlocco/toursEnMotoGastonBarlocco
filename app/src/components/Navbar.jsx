@@ -13,12 +13,11 @@ import LoginWidget from './LoginWidget';
 const Navbar = () => {
     return (
         <AppBar position="static">
-
             <Toolbar>
                 <HomeWidget />
                 <BasicWidget />
                 <FullWidget />
-                <InfoWidget/>
+                <InfoWidget />
                 <CartWidget />
                 <LoginWidget />
             </Toolbar>

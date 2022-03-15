@@ -1,26 +1,25 @@
+import {
+    Route,
+    Routes
+} from "react-router-dom";
+
 import Info from "./Info";
 import ItemListContainer from "./ItemListContainer";
 import Cart from "./Cart";
 import Login from "./Login";
 import ItemDetail from "./ItemDetail";
 
-import {
-    Route,
-    Routes
-} from "react-router-dom";
-
 const Main = () => {
     return (
         <main>
             <Routes>
-                <Route path="/" element={<ItemListContainer />}/>
-                <Route path="/category/:name" element={<ItemListContainer />}/>
-                <Route path="/item/:id" element={<ItemDetail />}/>
-                <Route path="/cart" element={<Cart />}/>
-                <Route path="/info" element={<Info />}/>
-                <Route path="/login" element={<Login />}/>
+                <Route path="/" element={<ItemListContainer />} />
+                <Route path="/category/:name" element={<ItemListContainer />} />
+                <Route path="/item/:id" element={<ItemDetail />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/info" element={<Info />} />
+                <Route path="/login" element={<Login />} />
             </Routes>
-        
         </main>
     );
 };

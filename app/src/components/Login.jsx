@@ -1,4 +1,4 @@
-const Login = () =>{
+const Login = () => {
     return (
         <p>Login.... en contrucción</p>
     );

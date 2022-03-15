@@ -1,7 +1,11 @@
-import { toast } from "react-toastify";
-import { useParams } from "react-router-dom";
-import dataTravel from "../data/dataTravel"
-import ItemCount from "./ItemCount";
+import {
+    toast
+} from "react-toastify";
+
+import {
+    useParams
+} from "react-router-dom";
+
 import {
     Card,
     CardActionArea,
@@ -12,16 +16,22 @@ import {
     Box
 } from '@mui/material';
 
+import dataTravel from "../data/dataTravel"
+import ItemCount from "./ItemCount";
+
 
 const ItemDetail = () => {
     let travelInfoAPI = dataTravel;
     const { id } = useParams();
     const miOnAdd = (count) => { };
 
+    const notify = () => {
+        toast.info("Contáctanos para saber mas sobre el viaje a " + travelInfoAPI[id - 1].name, { position: "bottom-right", });
+    }
+
     return (
         <>
             <Grid container>
- 
                 <Grid>
                     <Box display="flex" marginTop={3}>
                         <Card sx={{ maxWidth: 500, marginLeft: 5 }}>
@@ -54,7 +64,6 @@ const ItemDetail = () => {
                         </Card>
                     </Box>
                 </Grid>
-
                 <Grid>
                     <Box display="flex" marginTop={3}>
                         <Card sx={{ marginLeft: 5 }}>
@@ -62,9 +71,8 @@ const ItemDetail = () => {
                         </Card>
                     </Box>
                 </Grid>
-                
             </Grid>
-            {toast.info("Contáctanos para saber mas sobre el viaje a " + travelInfoAPI[id - 1].name, { position: "bottom-right", })}
+            {notify()}
         </>
     )
 };

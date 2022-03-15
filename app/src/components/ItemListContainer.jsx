@@ -2,32 +2,40 @@ import {
     useState,
     useEffect
 } from "react";
-import { useParams } from "react-router-dom";
 
-//import ItemCount from "./ItemCount";
+import {
+    useParams
+} from "react-router-dom";
+
+import {
+    toast
+} from "react-toastify";
+
 import ItemList from "./ItemList";
 import dataTravel from "../data/dataTravel"
 
 let travelInfoAPI = dataTravel;
 
 const ItemListContainer = (props) => {
-    //const miOnAdd = (count) => { console.log("se ejecuta miOnAdd", count) };
-
     const [loading, setLoading] = useState(true);
     const [travels, setTravels] = useState([]);
     const [msgError, setMsgError] = useState("");
-    const {name} = useParams();   
-    const travelFilter = [];     
-    
+    const { name } = useParams();
+    const travelFilter = [];
+
+    const notify = () => {
+        toast.info("Cargando viajes, espere por favor...", { position: "bottom-right", });
+    }
+
     useEffect(() => {
         const getItemList = new Promise((res, rej) => {
             setTimeout(() => {
                 travelInfoAPI.map((travel) => {
-                    if (name != undefined){ 
-                        if (travel.category == name){
+                    if (name != undefined) {
+                        if (travel.category == name) {
                             travelFilter.push(travel);
                         }
-                    }else{
+                    } else {
                         travelFilter.push(travel)
                     }
                 })
@@ -45,12 +53,10 @@ const ItemListContainer = (props) => {
             .finally(() => {
                 setLoading(false);
             });
-    },[name]);
-
+    }, [name]);
     return (
         <>
-            {/*<ItemCount stock ={20} initial = {10} onAdd = {miOnAdd}/>*/}
-            {loading ? (<p>Cargando viajes, espere por favor...</p>) : <ItemList travels={travels}/>}
+            {loading ? (notify()) : <ItemList travels={travels} />}
         </>
     )
 };

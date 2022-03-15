@@ -18,7 +18,7 @@ const BasicWidget = () => {
                             size="small"
                             component={NavLink}
                             to={"/category/basic"}
-                            startIcon = {<MopedIcon/>}
+                            startIcon={<MopedIcon />}
                         >
                             Básico
                         </Button>
@@ -26,7 +26,6 @@ const BasicWidget = () => {
                 </Grid>
             </Grid>
         </>
-
     );
 };
 export default BasicWidget;

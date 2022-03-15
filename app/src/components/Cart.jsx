@@ -1,4 +1,4 @@
-const Cart = () =>{
+const Cart = () => {
     return (
         <p>Carrito.... en contrucción</p>
     );

@@ -30,11 +30,10 @@ const ItemDetailContainer = () => {
             .finally(() => {
                 setLoading(false);
             });
-    },[]);
-
+    }, []);
     return (
         <>
-            {loading ? (<p>Cargando detalles del producto...</p>) :<ItemDetail detail = {detail} />}
+            {loading ? (<p>Cargando detalles del producto...</p>) : <ItemDetail detail={detail} />}
         </>
     )
 };

@@ -4,7 +4,10 @@ import {
     Box
 } from '@mui/material';
 
-import { NavLink } from "react-router-dom";
+import {
+    NavLink
+} from "react-router-dom";
+
 import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 
 const FullWidget = () => {
@@ -18,7 +21,7 @@ const FullWidget = () => {
                             size="small"
                             component={NavLink}
                             to={"/category/full"}
-                            startIcon = {<TwoWheelerIcon/>}
+                            startIcon={<TwoWheelerIcon />}
                         >
                             Completo
                         </Button>

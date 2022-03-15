@@ -6,7 +6,9 @@ import {
     useState,
 } from "react";
 
-import { toast } from "react-toastify";
+import {
+    toast
+} from "react-toastify";
 
 const ItemCount = (props) => {
     const [counter, setCounter] = useState(props.initial);
@@ -20,13 +22,16 @@ const ItemCount = (props) => {
     };
 
     const actualValueCounter = () => {
-        return(counter > 0) ? counter : setCounter(props.initial)
+        return (counter > 0) ? counter : setCounter(props.initial)
     };
 
     const addItem = () => {
-        (props.participants == 0 || counter > props.participants ) ? toast.error("El viaje no se encuentra disponible", {position: "bottom-right"}) : props.onAdd(counter);
+        (props.participants == 0 || counter > props.participants) ? notify() : props.onAdd(counter);
     };
 
+    const notify = () => {
+        toast.error("El viaje no se encuentra disponible", { position: "bottom-right" });
+    }
 
     return (
         <>
@@ -38,8 +43,8 @@ const ItemCount = (props) => {
                 Lugares disponibles: {props.participants}
             </Button>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
 
             <Button
                 variant="outlined"
@@ -67,8 +72,8 @@ const ItemCount = (props) => {
                 +
             </Button>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
 
             <Button
                 variant="outlined"
@@ -78,6 +83,7 @@ const ItemCount = (props) => {
             >
                 Agregar al carrito
             </Button>
+            
         </>
     );
 };
