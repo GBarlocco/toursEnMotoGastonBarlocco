@@ -4,7 +4,10 @@ import {
     Box
 } from '@mui/material';
 
-import { NavLink } from "react-router-dom";
+import { 
+    NavLink 
+} from "react-router-dom";
+
 import MopedIcon from '@mui/icons-material/Moped';
 
 const BasicWidget = () => {

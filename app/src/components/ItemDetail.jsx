@@ -3,10 +3,6 @@ import {
 } from "react-toastify";
 
 import {
-    useParams
-} from "react-router-dom";
-
-import {
     Card,
     CardActionArea,
     Typography,
@@ -16,17 +12,13 @@ import {
     Box
 } from '@mui/material';
 
-import dataTravel from "../data/dataTravel"
 import ItemCount from "./ItemCount";
 
-
-const ItemDetail = () => {
-    let travelInfoAPI = dataTravel;
-    const { id } = useParams();
+const ItemDetail = (props) => {
     const miOnAdd = (count) => { };
 
     const notify = () => {
-        toast.info("Contáctanos para saber mas sobre el viaje a " + travelInfoAPI[id - 1].name, { position: "bottom-right", });
+        toast.info("Contáctanos para saber mas sobre el viaje a " +  props.name, { position: "bottom-right", });
     }
 
     return (
@@ -39,24 +31,24 @@ const ItemDetail = () => {
                                 <CardMedia
                                     component="img"
                                     height="350"
-                                    image={travelInfoAPI[id - 1].pictureUrl}
-                                    alt={travelInfoAPI[id - 1].name}
+                                    image={props.picture}
+                                    alt={props.name}
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        {travelInfoAPI[id - 1].name}
+                                        {props.name}
                                     </Typography>
 
                                     <Typography variant="body2" color="text.secondary">
-                                        ID: {travelInfoAPI[id - 1].id}
+                                        ID: {props.id}
                                         <br />
-                                        Viaje: {travelInfoAPI[id - 1].name}
+                                        Viaje: {props.name}
                                         <br />
-                                        $ {travelInfoAPI[id - 1].price}
+                                        $ {props.price}
                                         <br />
-                                        Descripción: {travelInfoAPI[id - 1].description}
+                                        Descripción: {props.description}
                                         <br />
-                                        Categoria: {travelInfoAPI[id - 1].category}
+                                        Categoria: {props.category}
                                         <br />
                                     </Typography>
                                 </CardContent>
@@ -67,7 +59,7 @@ const ItemDetail = () => {
                 <Grid>
                     <Box display="flex" marginTop={3}>
                         <Card sx={{ marginLeft: 5 }}>
-                            {<ItemCount participants={travelInfoAPI[id - 1].participants} initial={10} onAdd={miOnAdd} />}
+                            {<ItemCount participants={props.participants} initial={10} onAdd={miOnAdd} />}
                         </Card>
                     </Box>
                 </Grid>

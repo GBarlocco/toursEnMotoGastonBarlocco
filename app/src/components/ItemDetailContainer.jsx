@@ -3,6 +3,10 @@ import {
     useEffect
 } from "react";
 
+import {
+    useParams
+} from "react-router-dom";
+
 import ItemDetail from "./ItemDetail";
 import dataTravel from "../data/dataTravel"
 
@@ -10,8 +14,17 @@ let travelInfoAPI = dataTravel;
 
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
-    const [detail, setDetail] = useState([]);
     const [msgError, setMsgError] = useState("");
+
+    const [idTravel, setIdTravel] = useState(0);
+    const [nameTravel, setNameTravel] = useState("");
+    const [priceTravel, setPriceTravel] = useState(0);
+    const [pictureTravel, setPictureTravel] = useState("");
+    const [descriptionTravel, setDescriptionTravel] = useState("");
+    const [categoryTravel, setCategoryTravel] = useState("");
+    const [participantsTravel, setParticipantsTravel] = useState(0);
+
+    const { id } = useParams();
 
     useEffect(() => {
         const getItem = new Promise((res, rej) => {
@@ -22,7 +35,18 @@ const ItemDetailContainer = () => {
 
         getItem.
             then((respondeAPI) => {
-                setDetail(respondeAPI);
+                respondeAPI.map((travel) => {
+                    if (travel.id == id) {
+                        setIdTravel(travel.id);
+                        setNameTravel(travel.name);
+                        setPriceTravel(travel.price);
+                        setPictureTravel(travel.pictureUrl);
+                        setDescriptionTravel(travel.description);
+                        setCategoryTravel(travel.category);
+                        setParticipantsTravel(travel.participants);
+                    };
+                })
+
             })
             .catch((errorAPI) => {
                 setMsgError("Error al cargar los datos..." + errorAPI);
@@ -33,7 +57,16 @@ const ItemDetailContainer = () => {
     }, []);
     return (
         <>
-            {loading ? (<p>Cargando detalles del producto...</p>) : <ItemDetail detail={detail} />}
+            {loading ? null :
+                <ItemDetail
+                    id={idTravel} 
+                    name={nameTravel}
+                    price = {priceTravel}
+                    picture = {pictureTravel}
+                    description = {descriptionTravel}
+                    category = {categoryTravel}
+                    participants = {participantsTravel}
+                />}
         </>
     )
 };

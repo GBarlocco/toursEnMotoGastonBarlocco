@@ -7,7 +7,7 @@ import Info from "./Info";
 import ItemListContainer from "./ItemListContainer";
 import Cart from "./Cart";
 import Login from "./Login";
-import ItemDetail from "./ItemDetail";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 const Main = () => {
     return (
@@ -15,7 +15,7 @@ const Main = () => {
             <Routes>
                 <Route path="/" element={<ItemListContainer />} />
                 <Route path="/category/:name" element={<ItemListContainer />} />
-                <Route path="/item/:id" element={<ItemDetail />} />
+                <Route path="/item/:id" element={<ItemDetailContainer />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/info" element={<Info />} />
                 <Route path="/login" element={<Login />} />
