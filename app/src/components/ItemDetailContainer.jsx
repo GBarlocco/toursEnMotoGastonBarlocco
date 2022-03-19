@@ -23,6 +23,7 @@ const ItemDetailContainer = () => {
     const [descriptionTravel, setDescriptionTravel] = useState("");
     const [categoryTravel, setCategoryTravel] = useState("");
     const [participantsTravel, setParticipantsTravel] = useState(0);
+    const [initialTravel, setInitialTravel] = useState(0);
 
     const { id } = useParams();
 
@@ -44,6 +45,7 @@ const ItemDetailContainer = () => {
                         setDescriptionTravel(travel.description);
                         setCategoryTravel(travel.category);
                         setParticipantsTravel(travel.participants);
+                        setInitialTravel(travel.initial);
                     };
                 })
 
@@ -59,13 +61,14 @@ const ItemDetailContainer = () => {
         <>
             {loading ? null :
                 <ItemDetail
-                    id={idTravel} 
+                    id={idTravel}
                     name={nameTravel}
-                    price = {priceTravel}
-                    picture = {pictureTravel}
-                    description = {descriptionTravel}
-                    category = {categoryTravel}
-                    participants = {participantsTravel}
+                    price={priceTravel}
+                    picture={pictureTravel}
+                    description={descriptionTravel}
+                    category={categoryTravel}
+                    participants={participantsTravel}
+                    initial={initialTravel}
                 />}
         </>
     )

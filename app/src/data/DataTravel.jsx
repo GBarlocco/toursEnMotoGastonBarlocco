@@ -6,7 +6,9 @@ let travelInfoAPI = [
         pictureUrl: "../img/mendoza.jpg",
         description: "Recorre Mendoza por completo en una de nuestras motos…",
         category: "basic",
-        participants: 0
+        participants: 0,
+        initial: 5
+
     },
     {
         id: 2,
@@ -15,7 +17,8 @@ let travelInfoAPI = [
         pictureUrl: "../img/bariloche.jpg",
         description: "Recorre Bariloche por completo en una de nuestras motos…",
         category: "basic",
-        participants: 20
+        participants: 20,
+        initial: 3
     },
     {
         id: 3,
@@ -24,7 +27,8 @@ let travelInfoAPI = [
         pictureUrl: "../img/merlo.jpg",
         description: "Recorre Merlo por completo en una de nuestras motos…",
         category: "basic",
-        participants: 30
+        participants: 30,
+        initial: 6
     },
     {
         id: 4,
@@ -33,7 +37,8 @@ let travelInfoAPI = [
         pictureUrl: "../img/ushuaia.jpg",
         description: "Recorre Ushuaia por completo en una de nuestras motos…...",
         category: "full",
-        participants: 40
+        participants: 40,
+        initial: 8
     },
     {
         id: 5,
@@ -42,7 +47,8 @@ let travelInfoAPI = [
         pictureUrl: "../img/jujuy.jpg",
         description: "Recorre Jujuy por completo en una de nuestras motos…",
         category: "full",
-        participants: 50
+        participants: 50,
+        initial: 1
     },
     {
         id: 6,
@@ -51,7 +57,8 @@ let travelInfoAPI = [
         pictureUrl: "../img/larioja.jpg",
         description: "Recorre La Rioja por completo en una de nuestras motos…",
         category: "full",
-        participants: 35
+        participants: 35,
+        initial: 4
     }
 ]
 

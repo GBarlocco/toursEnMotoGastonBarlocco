@@ -1,24 +1,37 @@
 import {
-    toast
-} from "react-toastify";
-
-import {
     Card,
     CardActionArea,
     Typography,
     CardMedia,
     CardContent,
     Grid,
-    Box
+    Box,
+    Button
 } from '@mui/material';
+
+import {
+    NavLink
+} from "react-router-dom";
+
+import {
+    useState,
+} from "react";
+
+import {
+    toast
+} from "react-toastify";
 
 import ItemCount from "./ItemCount";
 
 const ItemDetail = (props) => {
-    const miOnAdd = (count) => { };
+    const [buttonCart, setButtonCart] = useState(false);
+
+    const miOnAdd = (count) => {
+        count > 0 ? setButtonCart(true) : setButtonCart(false);
+    };
 
     const notify = () => {
-        toast.info("Contáctanos para saber mas sobre el viaje a " +  props.name, { position: "bottom-right", });
+        toast.info("Contáctanos para saber mas sobre el viaje a " + props.name, { position: "bottom-right", });
     }
 
     return (
@@ -59,7 +72,18 @@ const ItemDetail = (props) => {
                 <Grid>
                     <Box display="flex" marginTop={3}>
                         <Card sx={{ marginLeft: 5 }}>
-                            {<ItemCount participants={props.participants} initial={10} onAdd={miOnAdd} />}
+                            {buttonCart ?
+                                <Button
+                                    variant="outlined"
+                                    color="primary"
+                                    size="small"
+                                    component={NavLink}
+                                    to={"/cart"}
+                                >
+                                    Ir al carrito
+                                </Button>
+                                :
+                                <ItemCount participants={props.participants} initial={props.initial} onAdd={miOnAdd} />}
                         </Card>
                     </Box>
                 </Grid>
