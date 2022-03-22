@@ -2,7 +2,7 @@ let travelInfoAPI = [
     {
         id: 1,
         name: "Mendoza",
-        price: 100,
+        price: 1000,
         pictureUrl: "../img/mendoza.jpg",
         description: "Recorre Mendoza por completo en una de nuestras motos…",
         category: "basic",
@@ -13,7 +13,7 @@ let travelInfoAPI = [
     {
         id: 2,
         name: "Bariloche",
-        price: 200,
+        price: 2000,
         pictureUrl: "../img/bariloche.jpg",
         description: "Recorre Bariloche por completo en una de nuestras motos…",
         category: "basic",
@@ -23,7 +23,7 @@ let travelInfoAPI = [
     {
         id: 3,
         name: "Merlo",
-        price: 50,
+        price: 500,
         pictureUrl: "../img/merlo.jpg",
         description: "Recorre Merlo por completo en una de nuestras motos…",
         category: "basic",
@@ -89,6 +89,16 @@ let travelInfoAPI = [
         category: "basic",
         participants: 40,
         initial: 5
+    },
+    {
+        id: 10,
+        name: "Cono de Arita",
+        price: 4500,
+        pictureUrl: "../img/cono.jpg",
+        description: "Recorre el Cono de Arita de la ventana por completo en una de nuestras motos…",
+        category: "full",
+        participants: 10,
+        initial: 2
     }
 ]
 

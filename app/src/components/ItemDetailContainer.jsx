@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
         const getItem = new Promise((res, rej) => {
             setTimeout(() => {
                 res(travelInfoAPI);
-            }, 500);
+            }, 2000);
         });
 
         getItem.

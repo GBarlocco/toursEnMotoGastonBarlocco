@@ -26,17 +26,11 @@ const ItemListContainer = (props) => {
     useEffect(() => {
         const getItemList = new Promise((res, rej) => {
             setTimeout(() => {
-                travelInfoAPI.map((travel) => {
-                    if (name != undefined) {
-                        if (travel.category == name) {
-                            travelFilter.push(travel);
-                        }
-                    } else {
-                        travelFilter.push(travel)
-                    }
-                })
-                res(travelFilter);
-            }, 500);
+                const travels = name 
+                ? travelInfoAPI.filter(travel => travel.category === name)
+                : travelInfoAPI;
+                res(travels);
+            }, 2000);
         });
 
         getItemList.
