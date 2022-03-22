@@ -9,19 +9,25 @@ import {
     Grid
 } from '@mui/material';
 
-import {
-    NavLink
-} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const Item = (props) => {
     return (
         <>
-            <Grid item xs={12} sm={4}>
+            <Grid item
+                xl={2}
+                lg={3}
+                md={4}
+                sm={6}
+                xs={12}
+            >
                 <Box
                     marginTop={2}
-                    marginLeft={4}
+                    marginLeft={0}
                 >
-                    <Card sx={{ maxWidth: 350, position: "flex" }}>
+                    <Card
+                        sx={{ width: 240, position: "flex" }}
+                    >
                         <CardActionArea>
                             <CardMedia
                                 component="img"

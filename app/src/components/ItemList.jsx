@@ -1,8 +1,6 @@
 import Item from "./Item";
 
-import {
-    Grid
-} from '@mui/material';
+import { Grid } from '@mui/material';
 
 const ItemList = (props) => {
     return (

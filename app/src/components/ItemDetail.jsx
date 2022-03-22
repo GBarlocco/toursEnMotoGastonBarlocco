@@ -9,25 +9,29 @@ import {
     Button
 } from '@mui/material';
 
-import {
-    NavLink
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import {
-    useState,
-} from "react";
+import { useState } from "react";
 
-import {
-    toast
-} from "react-toastify";
+import { toast } from "react-toastify";
 
 import ItemCount from "./ItemCount";
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+
+
 
 const ItemDetail = (props) => {
     const [buttonCart, setButtonCart] = useState(false);
+    const { addItem, cart } = useContext(CartContext);
 
     const miOnAdd = (count) => {
-        count > 0 ? setButtonCart(true) : setButtonCart(false);
+        if (count > 0) {
+            setButtonCart(true);
+            addItem(props, count);
+        } else {
+            setButtonCart(false);
+        }
     };
 
     const notify = () => {
@@ -39,7 +43,9 @@ const ItemDetail = (props) => {
             <Grid container>
                 <Grid>
                     <Box display="flex" marginTop={3}>
-                        <Card sx={{ maxWidth: 500, marginLeft: 5 }}>
+                        <Card
+                            sx={{ maxWidth: 500, marginLeft: 5 }}
+                        >
                             <CardActionArea>
                                 <CardMedia
                                     component="img"

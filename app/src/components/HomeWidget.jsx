@@ -4,9 +4,7 @@ import {
     Box
 } from '@mui/material';
 
-import {
-    NavLink
-} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 import HomeIcon from '@mui/icons-material/Home';
 

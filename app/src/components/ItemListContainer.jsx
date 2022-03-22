@@ -3,13 +3,9 @@ import {
     useEffect
 } from "react";
 
-import {
-    useParams
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import {
-    toast
-} from "react-toastify";
+import { toast } from "react-toastify";
 
 import ItemList from "./ItemList";
 import dataTravel from "../data/dataTravel"
@@ -40,7 +36,7 @@ const ItemListContainer = (props) => {
                     }
                 })
                 res(travelFilter);
-            }, 2000);
+            }, 500);
         });
 
         getItemList.

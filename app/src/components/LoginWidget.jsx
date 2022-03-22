@@ -1,10 +1,6 @@
-import {
-    Button,
-} from '@mui/material';
+import { Button } from '@mui/material';
 
-import {
-    NavLink
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import LoginIcon from '@mui/icons-material/Login';
 

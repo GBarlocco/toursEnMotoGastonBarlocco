@@ -1,14 +1,8 @@
-import {
-    Button,
-} from "@mui/material";
+import {Button} from "@mui/material";
 
-import {
-    useState,
-} from "react";
+import {useState} from "react";
 
-import {
-    toast
-} from "react-toastify";
+import {toast} from "react-toastify";
 
 const ItemCount = (props) => {
     const [counter, setCounter] = useState(props.initial);
@@ -26,7 +20,7 @@ const ItemCount = (props) => {
     };
 
     const addItem = () => {
-        (props.participants == 0 || counter > props.participants) ? notify() : props.onAdd(counter);
+        (props.participants === 0 || counter > props.participants) ? notify() : props.onAdd(counter);
     };
 
     const notify = () => {

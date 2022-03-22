@@ -3,9 +3,7 @@ import {
     useEffect
 } from "react";
 
-import {
-    useParams
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import ItemDetail from "./ItemDetail";
 import dataTravel from "../data/dataTravel"
@@ -31,7 +29,7 @@ const ItemDetailContainer = () => {
         const getItem = new Promise((res, rej) => {
             setTimeout(() => {
                 res(travelInfoAPI);
-            }, 2000);
+            }, 500);
         });
 
         getItem.

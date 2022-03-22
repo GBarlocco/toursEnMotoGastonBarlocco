@@ -33,7 +33,7 @@ let travelInfoAPI = [
     {
         id: 4,
         name: "Ushuaia",
-        price: 5000,
+        price: 7000,
         pictureUrl: "../img/ushuaia.jpg",
         description: "Recorre Ushuaia por completo en una de nuestras motos…...",
         category: "full",
@@ -59,6 +59,36 @@ let travelInfoAPI = [
         category: "full",
         participants: 35,
         initial: 4
+    },
+    {
+        id: 7,
+        name: "Cordoba",
+        price: 2500,
+        pictureUrl: "../img/cordoba.jpg",
+        description: "Recorre Cordoba por completo en una de nuestras motos…",
+        category: "basico",
+        participants: 40,
+        initial: 5
+    },
+    {
+        id: 8,
+        name: "Trevelin",
+        price: 4000,
+        pictureUrl: "../img/trevelin.jpg",
+        description: "Recorre Trevelin por completo en una de nuestras motos…",
+        category: "full",
+        participants: 40,
+        initial: 5
+    },
+    {
+        id: 9,
+        name: "Sierra Ventana",
+        price: 1500,
+        pictureUrl: "../img/ventana.jpg",
+        description: "Recorre La sierra de la ventana por completo en una de nuestras motos…",
+        category: "basic",
+        participants: 40,
+        initial: 5
     }
 ]
 
