@@ -10,6 +10,7 @@ import dataTravel from "../data/dataTravel"
 
 let travelInfoAPI = dataTravel;
 
+
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     const [msgError, setMsgError] = useState("");
@@ -29,7 +30,7 @@ const ItemDetailContainer = () => {
         const getItem = new Promise((res, rej) => {
             setTimeout(() => {
                 res(travelInfoAPI);
-            }, 2000);
+            }, 500);
         });
 
         getItem.

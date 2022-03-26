@@ -21,7 +21,6 @@ const FullWidget = () => {
                             to={"/category/full"}
                             startIcon={<TwoWheelerIcon />}
                         >
-                            Completo
                         </Button>
                     </Box>
                 </Grid>

@@ -21,7 +21,6 @@ const BasicWidget = () => {
                             to={"/category/basic"}
                             startIcon={<MopedIcon />}
                         >
-                            Básico
                         </Button>
                     </Box>
                 </Grid>

@@ -8,27 +8,30 @@ import {
     Grid
 } from '@mui/material';
 
+import { NavLink } from "react-router-dom";
+
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
 const Cart = () => {
-    const { cart, clear, removeItem } = useContext(CartContext);
+    const { cart, removeItem, clear, total, cartCount } = useContext(CartContext);
 
     return (
         <>
             <Grid container>
                 {
-                    (cart.length <= 0 ?
+                    (cartCount <= 0 ?
                         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                             <Box marginTop={2} marginLeft={0}>
-                                <Card sx={{ width: 240, position: "flex" }} >
-                                    <CardActionArea>
-                                        <CardContent>
-                                            <Typography variant="body2" color="text.secondary">
-                                                Carrito sin contenido
-                                            </Typography>
-                                        </CardContent>
-                                    </CardActionArea>
+                                <Card sx={{ width: 600, position: "flex" }} >
+                                    <Button
+                                        color="inherit"
+                                        size="large"
+                                        component={NavLink}
+                                        to={"/"}
+                                    >
+                                        ¡No tienes viajes en el carrito! ¡presiona aquí para obtener uno!
+                                    </Button>
                                 </Card>
                             </Box>
                         </Grid>
@@ -57,7 +60,7 @@ const Cart = () => {
                                                             color="error"
                                                             size="small"
                                                             variant="outlined"
-                                                            onClick={() => removeItem(travel.product)}
+                                                            onClick={() => removeItem(travel.product, travel.count)}
                                                         >
                                                             Borrar item
                                                         </Button>
@@ -73,13 +76,25 @@ const Cart = () => {
                     )
                 }
             </Grid>
-            <Button
-                color="success"
-                size="small"
-                onClick={clear}
-            >
-                Limpiar carrito
-            </Button>
+            <Grid container>
+                {
+                    (cartCount > 0 ?
+                        <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
+                            <Box marginTop={2} marginLeft={0}>
+                                <Card sx={{ width: 240, position: "flex" }} >
+                                    <Typography variant="body2" color="text.secondary">
+                                        Cantidad de viajes: {cartCount}
+                                        <br/>
+                                        Total: ${total}
+                                    </Typography>
+                                </Card>
+                            </Box>
+                        </Grid>
+                        :
+                        null
+                    )
+                }
+            </Grid>
         </>
     )
 };

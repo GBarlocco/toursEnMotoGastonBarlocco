@@ -12,12 +12,11 @@ import dataTravel from "../data/dataTravel"
 
 let travelInfoAPI = dataTravel;
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
     const [loading, setLoading] = useState(true);
     const [travels, setTravels] = useState([]);
     const [msgError, setMsgError] = useState("");
     const { name } = useParams();
-    const travelFilter = [];
 
     const notify = () => {
         toast.info("Cargando viajes, espere por favor...", { position: "bottom-right", });
@@ -30,7 +29,7 @@ const ItemListContainer = (props) => {
                 ? travelInfoAPI.filter(travel => travel.category === name)
                 : travelInfoAPI;
                 res(travels);
-            }, 2000);
+            }, 500);
         });
 
         getItemList.
@@ -42,6 +41,7 @@ const ItemListContainer = (props) => {
             })
             .finally(() => {
                 setLoading(false);
+                toast.dismiss();
             });
     }, [name]);
     return (

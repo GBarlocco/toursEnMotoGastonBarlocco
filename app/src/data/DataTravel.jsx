@@ -95,11 +95,20 @@ let travelInfoAPI = [
         name: "Cono de Arita",
         price: 4500,
         pictureUrl: "../img/cono.jpg",
-        description: "Recorre el Cono de Arita de la ventana por completo en una de nuestras motos…",
+        description: "Recorre el Cono de Arita por completo en una de nuestras motos…",
         category: "full",
         participants: 10,
         initial: 2
+    },
+    {
+        id: 11,
+        name: "Esquel",
+        price: 2500,
+        pictureUrl: "../img/esquel.jpg",
+        description: "Recorre Esquel por completo en una de nuestras motos…",
+        category: "basic",
+        participants: 5,
+        initial: 2
     }
 ]
-
 export default travelInfoAPI;
