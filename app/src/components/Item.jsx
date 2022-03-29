@@ -1,14 +1,4 @@
-import {
-    Button,
-    Card,
-    CardActionArea,
-    Typography,
-    CardMedia,
-    CardContent,
-    Box,
-    Grid
-} from '@mui/material';
-
+import { Button, Card, CardActionArea, Typography, CardMedia, CardContent, Box, Grid } from '@mui/material';
 import { NavLink } from "react-router-dom";
 
 const Item = (props) => {

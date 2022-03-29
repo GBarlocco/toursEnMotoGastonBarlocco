@@ -1,7 +1,4 @@
-import {
-    AppBar,
-    Toolbar,
-} from '@mui/material';
+import { AppBar, Toolbar } from '@mui/material';
 
 import CartWidget from './CartWidget';
 import HomeWidget from './HomeWidget';

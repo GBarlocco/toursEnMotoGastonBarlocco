@@ -1,27 +1,9 @@
-import {
-    Card,
-    CardActionArea,
-    Typography,
-    CardMedia,
-    CardContent,
-    Grid,
-    Box,
-    Button
-} from '@mui/material';
-
-import { 
-    useState,
-    useContext 
-} from "react";
-
+import { Card, CardActionArea, Typography, CardMedia, CardContent, Grid, Box, Button } from '@mui/material';
+import { useState, useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
 import { toast } from "react-toastify";
-
 import { CartContext } from '../context/CartContext';
-
 import ItemCount from "./ItemCount";
-
 
 const ItemDetail = (props) => {
     const [buttonCart, setButtonCart] = useState(false);
@@ -39,6 +21,10 @@ const ItemDetail = (props) => {
     const notify = () => {
         toast.info("Contáctanos para saber mas sobre el viaje a " + props.name, { position: "bottom-right", });
     }
+
+    useEffect(() => {
+        notify();
+    }, [])
 
     return (
         <>
@@ -94,7 +80,6 @@ const ItemDetail = (props) => {
                     </Box>
                 </Grid>
             </Grid>
-            {notify()}
         </>
     )
 };

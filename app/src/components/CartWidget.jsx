@@ -1,14 +1,9 @@
 import { Button } from '@mui/material';
-
 import { NavLink } from "react-router-dom";
-
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
-
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
-
-
 
 const CartWidget = () => {
     const {cartCount } = useContext(CartContext);
@@ -22,7 +17,7 @@ const CartWidget = () => {
                 to={"cart"}
             >
                 <Badge
-                    badgeContent={(cartCount) == 0 ? 0 : cartCount}
+                    badgeContent={cartCount}
                     color="info"
                     size="small"
                 >

@@ -1,21 +1,14 @@
-import {
-    useState,
-    useEffect
-} from "react";
-
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import { getDocs, collection, query, where } from "firebase/firestore";
 import ItemDetail from "./ItemDetail";
-import dataTravel from "../data/dataTravel"
-
-let travelInfoAPI = dataTravel;
+import { db } from "../firebase/firebase";
 
 
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
-    const [msgError, setMsgError] = useState("");
 
-    const [idTravel, setIdTravel] = useState(0);
+    const [idTravel, setIdTravel] = useState("");
     const [nameTravel, setNameTravel] = useState("");
     const [priceTravel, setPriceTravel] = useState(0);
     const [pictureTravel, setPictureTravel] = useState("");
@@ -26,35 +19,31 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams();
 
+
     useEffect(() => {
-        const getItem = new Promise((res, rej) => {
-            setTimeout(() => {
-                res(travelInfoAPI);
-            }, 500);
-        });
+        const travelCollection = collection(db, "dataTravel");
+        const queryDb = query(travelCollection, where("id", "==", id));
 
-        getItem.
-            then((respondeAPI) => {
-                respondeAPI.map((travel) => {
-                    if (travel.id == id) {
-                        setIdTravel(travel.id);
-                        setNameTravel(travel.name);
-                        setPriceTravel(travel.price);
-                        setPictureTravel(travel.pictureUrl);
-                        setDescriptionTravel(travel.description);
-                        setCategoryTravel(travel.category);
-                        setParticipantsTravel(travel.participants);
-                        setInitialTravel(travel.initial);
-                    };
-                })
+        getDocs(queryDb)
+            .then((respondeAPI) => {
+                const travel =respondeAPI.docs.map(t => ((t.data())));
 
+                setIdTravel(travel[0].id);
+                setNameTravel(travel[0].name);
+                setPriceTravel(travel[0].price);
+                setPictureTravel(travel[0].pictureUrl);
+                setDescriptionTravel(travel[0].description);
+                setCategoryTravel(travel[0].category);
+                setParticipantsTravel(travel[0].participants);
+                setInitialTravel(travel[0].initial);
             })
-            .catch((errorAPI) => {
-                setMsgError("Error al cargar los datos..." + errorAPI);
+            .catch((error) => {
+
             })
             .finally(() => {
                 setLoading(false);
             });
+
     }, []);
     return (
         <>

@@ -1,11 +1,5 @@
-import {
-    Button,
-    Grid,
-    Box
-} from '@mui/material';
-
-import {NavLink} from "react-router-dom";
-
+import { Button, Grid, Box } from '@mui/material';
+import { NavLink } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 
 const HomeWidget = () => {

@@ -1,15 +1,5 @@
-import {
-    Button,
-    Card,
-    CardActionArea,
-    Typography,
-    CardContent,
-    Box,
-    Grid
-} from '@mui/material';
-
+import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid } from '@mui/material';
 import { NavLink } from "react-router-dom";
-
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
@@ -82,9 +72,16 @@ const Cart = () => {
                         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                             <Box marginTop={2} marginLeft={0}>
                                 <Card sx={{ width: 240, position: "flex" }} >
+                                    <Button
+                                        color="success"
+                                        size="small"
+                                        onClick={clear}
+                                    >
+                                        Limpiar carrito
+                                    </Button>
                                     <Typography variant="body2" color="text.secondary">
                                         Cantidad de viajes: {cartCount}
-                                        <br/>
+                                        <br />
                                         Total: ${total}
                                     </Typography>
                                 </Card>

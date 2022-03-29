@@ -1,7 +1,4 @@
-import {
-    Route,
-    Routes
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Info from "./Info";
 import ItemListContainer from "./ItemListContainer";
