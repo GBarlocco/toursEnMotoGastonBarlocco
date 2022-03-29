@@ -6,7 +6,8 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
 const CartWidget = () => {
-    const {cartCount } = useContext(CartContext);
+    const { cartCount } = useContext(CartContext);
+
     return (
         <>
             <Button

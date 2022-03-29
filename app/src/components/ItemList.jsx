@@ -8,7 +8,7 @@ const ItemList = (props) => {
                 {
                     props.travels.map((travel) => {
                         return <Item key={travel.id} id={travel.id} name={travel.name} price={travel.price} pictureUrl={travel.pictureUrl} category={travel.category} />
-                    }) 
+                    })
                 }
             </Grid>
         </>

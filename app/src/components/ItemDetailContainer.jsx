@@ -4,10 +4,8 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 import ItemDetail from "./ItemDetail";
 import { db } from "../firebase/firebase";
 
-
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
-
     const [idTravel, setIdTravel] = useState("");
     const [nameTravel, setNameTravel] = useState("");
     const [priceTravel, setPriceTravel] = useState(0);
@@ -19,14 +17,13 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams();
 
-
     useEffect(() => {
         const travelCollection = collection(db, "dataTravel");
         const queryDb = query(travelCollection, where("id", "==", id));
 
         getDocs(queryDb)
             .then((respondeAPI) => {
-                const travel =respondeAPI.docs.map(t => ((t.data())));
+                const travel = respondeAPI.docs.map(t => ((t.data())));
 
                 setIdTravel(travel[0].id);
                 setNameTravel(travel[0].name);
@@ -38,7 +35,6 @@ const ItemDetailContainer = () => {
                 setInitialTravel(travel[0].initial);
             })
             .catch((error) => {
-
             })
             .finally(() => {
                 setLoading(false);

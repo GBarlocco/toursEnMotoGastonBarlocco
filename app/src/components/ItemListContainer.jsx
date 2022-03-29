@@ -28,9 +28,9 @@ const ItemListContainer = () => {
                     setLoading(false);
                     toast.dismiss();
                 })
-        }else{
+        } else {
             const travelCollection = collection(db, "dataTravel");
-            const myFilter = query(travelCollection, where ("category", "==", name));
+            const myFilter = query(travelCollection, where("category", "==", name));
             const document = getDocs(myFilter);
 
             document
@@ -43,9 +43,9 @@ const ItemListContainer = () => {
         }
     }, [name]);
 
-    useEffect(()=>{
-        if (loading){notify()}
-    },[]);
+    useEffect(() => {
+        if (loading) { notify() }
+    }, []);
 
     return (
         <>
