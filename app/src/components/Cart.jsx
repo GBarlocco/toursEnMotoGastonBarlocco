@@ -1,10 +1,41 @@
 import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid } from '@mui/material';
 import { NavLink } from "react-router-dom";
 import { useContext } from 'react';
+import { toast } from "react-toastify";
+import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
+import { db } from "../firebase/firebase";
 import { CartContext } from '../context/CartContext';
 
 const Cart = () => {
     const { cart, removeItem, clear, total, cartCount } = useContext(CartContext);
+
+    
+    const notify = (props) => {
+        toast.success(`¡Gracias por realizar tu compra! tu ID de rastreo es: ${props}`, { position: "bottom-right", });
+    }
+
+    const cleanCart = (props) =>{
+        notify(props);
+        clear();
+    }
+
+    const addCart = () =>{
+        const order = {
+            buyer: {
+                name: "Gastón",
+                phone: "123456",
+                email: "asdasd@asdasd.com"
+            },
+            items: cart,
+            data: serverTimestamp(),
+            total: total
+        }
+        const orderCollection = collection(db, "orders");
+        const newOrder = addDoc(orderCollection, order);
+
+        newOrder
+        .then(respondeAPI =>cleanCart(respondeAPI.id));
+    }
 
     return (
         <>
@@ -84,6 +115,15 @@ const Cart = () => {
                                         <br />
                                         Total: ${total}
                                     </Typography>
+                                    <br />
+                                    <br />
+                                    <Button
+                                        color="info"
+                                        size="small"
+                                        onClick={addCart}
+                                    >
+                                        Finalizar compra
+                                    </Button>
                                 </Card>
                             </Box>
                         </Grid>

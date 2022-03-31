@@ -19,9 +19,10 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         const travelCollection = collection(db, "dataTravel");
-        const queryDb = query(travelCollection, where("id", "==", id));
+        const myFilter = query(travelCollection, where("id", "==", id));
+        const document = getDocs(myFilter);
 
-        getDocs(queryDb)
+        document
             .then((respondeAPI) => {
                 const travel = respondeAPI.docs.map(t => ((t.data())));
 
