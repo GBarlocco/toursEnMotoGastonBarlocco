@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, Box } from '@mui/material';
 import { NavLink } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
@@ -9,7 +9,7 @@ const CartWidget = () => {
     const { cartCount } = useContext(CartContext);
 
     return (
-        <>
+        <Box>
             <Button
                 color="inherit"
                 startIcon={<ShoppingCartIcon />}
@@ -24,7 +24,7 @@ const CartWidget = () => {
                 >
                 </Badge>
             </Button>
-        </>
+        </Box>
     );
 };
 export default CartWidget;

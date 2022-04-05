@@ -15,20 +15,14 @@ const Item = (props) => {
                                 alt={props.name}
                             />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {props.name}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    ID: {props.id}
-                                    <br />
-                                    Viaje: {props.name}
-                                    <br />
-                                    ${props.price}
-                                    <br />
-                                    Categoria: {props.category}
-                                    <br />
-                                </Typography>
+                                <Typography gutterBottom variant="h5"> {props.name} </Typography>
+                                <Typography variant="body2" color="text.secondary"> ID: {props.id} </Typography>
+                                <Typography variant="body2" color="text.secondary"> Viaje: {props.name} </Typography>
+                                <Typography variant="body2" color="text.secondary"> ${props.price} </Typography>
+                                <Typography variant="body2" color="text.secondary"> Categoria: {props.category} </Typography>
                             </CardContent>
+                        </CardActionArea>
+                        <Box>
                             <Button
                                 color="primary"
                                 size="small"
@@ -37,7 +31,7 @@ const Item = (props) => {
                             >
                                 Ver mas...
                             </Button>
-                        </CardActionArea>
+                        </Box>
                     </Card>
                 </Box>
             </Grid>

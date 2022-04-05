@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
     const [initialTravel, setInitialTravel] = useState(0);
 
     const { id } = useParams();
-
+    
     useEffect(() => {
         const travelCollection = collection(db, "dataTravel");
         const myFilter = query(travelCollection, where("id", "==", id));

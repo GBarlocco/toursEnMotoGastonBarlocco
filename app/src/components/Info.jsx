@@ -1,6 +1,9 @@
+import { Box } from '@mui/material';
 const Info = () => {
     return (
-        <p>Info.... en contrucción</p>
+        <Box>
+            <p>Info.... en contrucción</p>
+        </Box>
     );
 };
 export default Info;

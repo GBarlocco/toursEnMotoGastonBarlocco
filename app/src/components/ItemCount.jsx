@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Box, Grid } from "@mui/material";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
@@ -12,57 +12,52 @@ const ItemCount = (props) => {
     const notify = () => toast.error("El viaje no se encuentra disponible", { position: "bottom-right" });
 
     return (
-        <>
-            <Button
-                variant="outlined"
-                color="primary"
-                size="small"
-            >
-                Lugares disponibles: {props.participants}
-            </Button>
-
-            <br />
-            <br />
-
-            <Button
-                variant="outlined"
-                color="primary"
-                size="small"
-                onClick={downCounter}
-            >
-                -
-            </Button>
-
-            <Button
-                variant="outlined"
-                color="primary"
-                size="small"
-            >
-                {actualValueCounter()}
-            </Button>
-
-            <Button
-                variant="outlined"
-                color="primary"
-                size="small"
-                onClick={uppCounter}
-            >
-                +
-            </Button>
-
-            <br />
-            <br />
-
-            <Button
-                variant="outlined"
-                color="primary"
-                size="small"
-                onClick={addItem}
-            >
-                Agregar al carrito
-            </Button>
-
-        </>
+        <Grid>
+            <Box>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    size="small"
+                >
+                    Lugares disponibles: {props.participants}
+                </Button>
+            </Box>
+            <Box>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    size="small"
+                    onClick={downCounter}
+                >
+                    -
+                </Button>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    size="small"
+                >
+                    {actualValueCounter()}
+                </Button>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    size="small"
+                    onClick={uppCounter}
+                >
+                    +
+                </Button>
+            </Box>
+            <Box>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    size="small"
+                    onClick={addItem}
+                >
+                    Agregar al carrito
+                </Button>
+            </Box>
+        </Grid>
     );
 };
 

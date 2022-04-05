@@ -1,4 +1,4 @@
-import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid } from '@mui/material';
+import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid, CardMedia } from '@mui/material';
 import { NavLink } from "react-router-dom";
 import { useContext } from 'react';
 import { toast } from "react-toastify";
@@ -9,17 +9,16 @@ import { CartContext } from '../context/CartContext';
 const Cart = () => {
     const { cart, removeItem, clear, total, cartCount } = useContext(CartContext);
 
-    
     const notify = (props) => {
         toast.success(`¡Gracias por realizar tu compra! tu ID de rastreo es: ${props}`, { position: "bottom-right", });
     }
 
-    const cleanCart = (props) =>{
+    const cleanCart = (props) => {
         notify(props);
         clear();
     }
 
-    const addCart = () =>{
+    const addCart = () => {
         const order = {
             buyer: {
                 name: "Gastón",
@@ -30,11 +29,12 @@ const Cart = () => {
             data: serverTimestamp(),
             total: total
         }
+
         const orderCollection = collection(db, "orders");
         const newOrder = addDoc(orderCollection, order);
 
         newOrder
-        .then(respondeAPI =>cleanCart(respondeAPI.id));
+            .then(respondeAPI => cleanCart(respondeAPI.id));
     }
 
     return (
@@ -58,41 +58,36 @@ const Cart = () => {
                         </Grid>
                         :
                         cart.map((travel) =>
-                            <>
-                                <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
-                                    <Box marginTop={2} marginLeft={0}>
-                                        <Card sx={{ width: 240, position: "flex" }} >
-                                            <CardActionArea>
-                                                <CardContent>
-                                                    <Typography gutterBottom variant="h5" component="div">
-                                                        {travel.product.name}
-                                                    </Typography>
-                                                    <Typography variant="body2" color="text.secondary">
-                                                        Cantidad: {travel.count}
-                                                        <br />
-                                                        <br />
-                                                        Precio unitario: $ {travel.product.price}
-                                                        <br />
-                                                        <br />
-                                                        TOTAL: $ {travel.product.price * travel.count}
-                                                        <br />
-                                                        <br />
-                                                        <Button
-                                                            color="error"
-                                                            size="small"
-                                                            variant="outlined"
-                                                            onClick={() => removeItem(travel.product, travel.count)}
-                                                        >
-                                                            Borrar item
-                                                        </Button>
-                                                        <br />
-                                                    </Typography>
-                                                </CardContent>
-                                            </CardActionArea>
-                                        </Card>
-                                    </Box>
-                                </Grid>
-                            </>
+                            <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
+                                <Box marginTop={2} marginLeft={0}>
+                                    <Card sx={{ width: 240, position: "flex" }} >
+                                        <CardActionArea>
+                                            <CardContent>
+                                                <Typography gutterBottom variant="h5" > {travel.product.name} </Typography>
+                                                <CardMedia
+                                                    component="img"
+                                                    height="150"
+                                                    image={travel.product.picture}
+                                                    alt={travel.product.name}
+                                                />
+                                                <Typography variant="body2" color="text.secondary"> Cantidad: {travel.count} </Typography>
+                                                <Typography variant="body2" color="text.secondary"> Precio unitario: $ {travel.product.price}</Typography>
+                                                <Typography variant="body2" color="text.secondary"> TOTAL: $ {travel.product.price * travel.count} </Typography>
+                                            </CardContent>
+                                        </CardActionArea>
+                                        <Box>
+                                            <Button
+                                                color="error"
+                                                size="small"
+                                                variant="outlined"
+                                                onClick={() => removeItem(travel.product, travel.count)}
+                                            >
+                                                Borrar item
+                                            </Button>
+                                        </Box>
+                                    </Card>
+                                </Box>
+                            </Grid>
                         )
                     )
                 }
@@ -103,27 +98,29 @@ const Cart = () => {
                         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                             <Box marginTop={2} marginLeft={0}>
                                 <Card sx={{ width: 240, position: "flex" }} >
-                                    <Button
-                                        color="success"
-                                        size="small"
-                                        onClick={clear}
-                                    >
-                                        Limpiar carrito
-                                    </Button>
-                                    <Typography variant="body2" color="text.secondary">
-                                        Cantidad de viajes: {cartCount}
-                                        <br />
-                                        Total: ${total}
-                                    </Typography>
-                                    <br />
-                                    <br />
-                                    <Button
-                                        color="info"
-                                        size="small"
-                                        onClick={addCart}
-                                    >
-                                        Finalizar compra
-                                    </Button>
+                                    <CardActionArea>
+                                        <Typography gutterBottom variant="h6" > Resumen de compra: </Typography>
+                                        <Typography variant="body2" color="text.secondary"> Cantidad de viajes: {cartCount} </Typography>
+                                        <Typography variant="body2" color="text.secondary"> Total: ${total}  </Typography>
+                                    </CardActionArea>
+                                    <Box>
+                                        <Button
+                                            color="success"
+                                            size="small"
+                                            onClick={clear}
+                                        >
+                                            Limpiar carrito
+                                        </Button>
+                                    </Box>
+                                    <Box>
+                                        <Button
+                                            color="info"
+                                            size="small"
+                                            onClick={addCart}
+                                        >
+                                            Finalizar compra
+                                        </Button>
+                                    </Box>
                                 </Card>
                             </Box>
                         </Grid>

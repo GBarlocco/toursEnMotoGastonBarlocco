@@ -10,36 +10,31 @@ const ItemListContainer = () => {
     const [travels, setTravels] = useState([]);
     const { name } = useParams();
 
-
     const notify = () => {
         toast.info("Cargando viajes, espere por favor...", { position: "bottom-right", });
     }
 
+    const infoDB = (props) => {
+        props
+            .then(respondeAPI => setTravels(respondeAPI.docs.map(travel => travel.data())))
+            .catch((error) => {
+            })
+            .finally(() => {
+                setLoading(false);
+                toast.dismiss();
+            })
+    }
+
     useEffect(() => {
+        const travelCollection = collection(db, "dataTravel");
 
         if (!name) {
-            const travelCollection = collection(db, "dataTravel");
             const document = getDocs(travelCollection);
-
-            document
-                .then(respondeAPI => setTravels(respondeAPI.docs.map(travel => travel.data())))
-                .catch((err) => console.log(err))
-                .finally(() => {
-                    setLoading(false);
-                    toast.dismiss();
-                })
+            infoDB(document);
         } else {
-            const travelCollection = collection(db, "dataTravel");
             const myFilter = query(travelCollection, where("category", "==", name));
             const document = getDocs(myFilter);
-
-            document
-                .then(respondeAPI => setTravels(respondeAPI.docs.map(travel => travel.data())))
-                .catch((err) => console.log(err))
-                .finally(() => {
-                    setLoading(false);
-                    toast.dismiss();
-                })
+            infoDB(document);
         }
     }, [name]);
 

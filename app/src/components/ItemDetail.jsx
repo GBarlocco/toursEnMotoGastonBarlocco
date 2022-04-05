@@ -40,22 +40,12 @@ const ItemDetail = (props) => {
                                     alt={props.name}
                                 />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        {props.name}
-                                    </Typography>
-
-                                    <Typography variant="body2" color="text.secondary">
-                                        ID: {props.id}
-                                        <br />
-                                        Viaje: {props.name}
-                                        <br />
-                                        $ {props.price}
-                                        <br />
-                                        Descripción: {props.description}
-                                        <br />
-                                        Categoria: {props.category}
-                                        <br />
-                                    </Typography>
+                                    <Typography gutterBottom variant="h5" component="div"> {props.name} </Typography>
+                                    <Typography variant="body2" color="text.secondary"> ID: {props.id} </Typography>
+                                    <Typography variant="body2" color="text.secondary"> Viaje: {props.name} </Typography>
+                                    <Typography variant="body2" color="text.secondary"> $ {props.price} </Typography>
+                                    <Typography variant="body2" color="text.secondary"> Descripción: {props.description} </Typography>
+                                    <Typography variant="body2" color="text.secondary"> Categoria: {props.category} </Typography>
                                 </CardContent>
                             </CardActionArea>
                         </Card>
