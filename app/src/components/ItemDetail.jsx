@@ -1,4 +1,4 @@
-import { Card, CardActionArea, Typography, CardMedia, CardContent, Grid, Box, Button } from '@mui/material';
+import { Card, CardActionArea, Typography, CardMedia, CardContent, Grid, Box, Button, Container } from '@mui/material';
 import { useState, useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -28,10 +28,17 @@ const ItemDetail = (props) => {
 
     return (
         <>
-            <Grid container>
+            <Container component="main" maxWidth="xs">
                 <Grid>
-                    <Box display="flex" marginTop={3}>
-                        <Card sx={{ maxWidth: 500, marginLeft: 5 }} >
+                    <Box
+                        sx={{
+                            marginTop: 3,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <Card sx={{ maxWidth: 500 }} >
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
@@ -52,8 +59,15 @@ const ItemDetail = (props) => {
                     </Box>
                 </Grid>
                 <Grid>
-                    <Box display="flex" marginTop={3}>
-                        <Card sx={{ marginLeft: 5 }}>
+                    <Box
+                        sx={{
+                            marginTop: 3,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <Card>
                             {buttonCart ?
                                 <Button
                                     variant="outlined"
@@ -69,7 +83,7 @@ const ItemDetail = (props) => {
                         </Card>
                     </Box>
                 </Grid>
-            </Grid>
+            </Container>
         </>
     )
 };
