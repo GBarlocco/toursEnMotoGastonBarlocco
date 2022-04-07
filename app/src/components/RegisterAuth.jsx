@@ -1,15 +1,11 @@
-import { Avatar, Button, TextField, FormControlLabel, Link, Checkbox, Grid, Box, Typography, Container } from '@mui/material';
-import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
-import { NavLink } from "react-router-dom";
+import { Button, TextField, Box, Typography, Container } from '@mui/material';
 import { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import { useNavigate} from 'react-router-dom';
 
-
-const Login = () => {
-    const { login, userLog } = useContext(AuthContext);
-
+const RegisterAuth = () => {
+    const { registerUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [user, setUser] = useState({
@@ -20,6 +16,9 @@ const Login = () => {
     const notifyError = (props) => {
         toast.error(props, { position: "bottom-right", });
     }
+    const notifySuccess = (props) => {
+        toast.success(props, { position: "bottom-right", });
+    }
 
     const handleChange = ({ target: { name, value } }) => {
         setUser({ ...user, [name]: value });
@@ -28,21 +27,19 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await login(user.email, user.password);
-            navigate("/");
-        }
+            await registerUser(user.email, user.password);
+            notifySuccess("Gracias por registrarte!");
+            navigate("/"); 
+        } 
         catch (err) {
             const errorCode = err.code;
-            console.log(errorCode);
-            if (errorCode == "auth/invalid-email" || errorCode == "auth/internal-error") { notifyError("Correo inválido"); }
-            if (errorCode == "auth/weak-password") { notifyError("la contraseña debe contar con 6 caracteres") };
-            if (errorCode == "auth/email-already-in.use") { notifyError("¡El correo ya se encuentra registrado!") };
-            if (errorCode == "auth/wrong-password") { notifyError("¡Contraseña equivocada!, intente nuevamente") };
-            if (errorCode == "auth/too-many-requests") { notifyError("¡Intente más tarde!") };  
+            if (errorCode == "auth/invalid-email" ||errorCode == "auth/internal-error"  ) {notifyError("Correo inválido");}
+            if (errorCode == "auth/weak-password"){notifyError("la contraseña debe contar con 6 caracteres")};
+            if (errorCode == "auth/email-already-in-use"){notifyError("¡El correo ya se encuentra registrado!")};
         }
     }
-    return (
 
+    return (
         <Container component="main" maxWidth="xs">
             <Box
                 sx={{
@@ -52,11 +49,8 @@ const Login = () => {
                     alignItems: 'center',
                 }}
             >
-                <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
-                    <AssignmentIndIcon />
-                </Avatar>
                 <Typography component="h1" variant="h5"> Sign in </Typography>
-                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} >
                     <TextField
                         margin="normal"
                         required
@@ -86,30 +80,12 @@ const Login = () => {
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
                     >
-                        Sign In
-                    </Button>
-
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
-                        component={NavLink}
-                        to={"/regAuth"}
-                    >
                         Registrar
                     </Button>
-                    <Grid container>
-                        <Grid item>
-                            <Link href="#" variant="body2">
-                                {"Login with google"}
-                            </Link>
-                        </Grid>
-                    </Grid>
                 </Box>
             </Box>
         </Container>
     );
-}
 
-export default Login;
+}
+export default RegisterAuth;

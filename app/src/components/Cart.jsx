@@ -1,16 +1,21 @@
 import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid, CardMedia } from '@mui/material';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
-import { db } from "../firebase/firebase";
+import { db } from '../firebase/firebase';
 import { CartContext } from '../context/CartContext';
+import { useNavigate} from 'react-router-dom';
 
 const Cart = () => {
     const { cart, removeItem, clear, total, cartCount } = useContext(CartContext);
 
+    const navigate = useNavigate();
+
     const notify = (props) => {
         toast.success(`¡Gracias por realizar tu compra! tu ID de rastreo es: ${props}`, { position: "bottom-right", });
+        navigate("/");
+
     }
 
     const cleanCart = (props) => {
