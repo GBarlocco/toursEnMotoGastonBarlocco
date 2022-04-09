@@ -72,7 +72,7 @@ const Cart = () => {
                         </Grid>
                         :
                         cart.map((travel) =>
-                            <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
+                            <Grid item xl={2} lg={3} md={4} sm={6} xs={12}>
                                 <Box marginTop={2} marginLeft={0}>
                                     <Card sx={{ width: 240, position: "flex" }} >
                                         <CardActionArea>
