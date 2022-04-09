@@ -14,9 +14,9 @@ const LogoutWidget = () => {
     }
 
     const handleLogout = async () =>{
+        navigate("/");
         await logOut();
         notifySuccess ("¡Gracias por utilizar nuestra app!");
-        navigate("/");
     }
 
     return (

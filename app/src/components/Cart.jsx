@@ -16,7 +16,7 @@ const Cart = () => {
 
     const notify = (props) => {
         toast.success(`¡Gracias por realizar tu compra! tu ID de rastreo es: ${props}`, { position: "bottom-right", });
-        navigate("/");
+        navigate("/buy/" + props);
 
     }
 
@@ -29,8 +29,8 @@ const Cart = () => {
 
         let userName = "";
         let userPhone = "";
-        (userLog.displayName ? userName = userLog.displayName : userName= "-");
-        (userLog.phoneNumber ? userPhone = userLog.phoneNumber : userPhone= "-");
+        (userLog.displayName ? userName = userLog.displayName : userName = "-");
+        (userLog.phoneNumber ? userPhone = userLog.phoneNumber : userPhone = "-");
 
 
         const order = {
@@ -126,15 +126,27 @@ const Cart = () => {
                                             Limpiar carrito
                                         </Button>
                                     </Box>
-                                    <Box>
-                                        <Button
-                                            color="info"
-                                            size="small"
-                                            onClick={addCart}
-                                        >
-                                            Finalizar compra
-                                        </Button>
-                                    </Box>
+                                    {
+                                        userLog ?
+                                            <Box>
+                                                <Button
+                                                    color="info"
+                                                    size="small"
+                                                    onClick={addCart}
+                                                >
+                                                    Finalizar compra
+                                                </Button>
+                                            </Box>
+                                            :
+                                            <Button
+                                                color="info"
+                                                size="small"
+                                                component={NavLink}
+                                                to={"/Login"}
+                                            >
+                                                Estás a un click de cumplir tus sueños!
+                                            </Button>
+                                    }
                                 </Card>
                             </Box>
                         </Grid>

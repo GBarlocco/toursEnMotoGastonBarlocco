@@ -33,7 +33,6 @@ const Login = () => {
         }
         catch (err) {
             const errorCode = err.code;
-            console.log(errorCode);
             if (errorCode == "auth/invalid-email" || errorCode == "auth/internal-error") { notifyError("Correo inválido"); }
             if (errorCode == "auth/weak-password") { notifyError("la contraseña debe contar con 6 caracteres") };
             if (errorCode == "auth/email-already-in.use") { notifyError("¡El correo ya se encuentra registrado!") };

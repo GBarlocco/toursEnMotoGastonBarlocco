@@ -1,0 +1,59 @@
+import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid, Container  } from '@mui/material';
+import { NavLink } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+import { AuthContext } from '../context/AuthContext';
+import { useContext } from 'react';
+
+const Buy = () => {
+    const { idCompra } = useParams();
+    const { userLog } = useContext(AuthContext);
+
+    return (
+        <Container component="main" maxWidth="xs">
+            <Grid>
+                <Box
+                    sx={{
+                        marginTop: 3,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+                    <Card sx={{ maxWidth: 500 }} >
+                        <CardActionArea>
+                            <CardContent>
+                                <Typography gutterBottom variant="h6" component="div"> ¡COMPRA REALIZADA CON ÉXITO!</Typography>
+                                <Typography variant="body2" color="text.secondary"> ID de seguimiento: {idCompra} </Typography>
+                                <Typography variant="body2" color="text.secondary"> Correo de contacto: {userLog.email}</Typography>
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                </Box>
+            </Grid>
+
+            <Grid>
+                <Box
+                    sx={{
+                        marginTop: 3,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+                    <Card>
+                        <Button
+                            variant="outlined"
+                            color="primary"
+                            size="small"
+                            component={NavLink}
+                            to={"/"}
+                        >
+                            ¡Sigue disfrutando de nuestras propuestas!
+                        </Button>
+                    </Card>
+                </Box>
+            </Grid>
+        </Container>
+    );
+};
+export default Buy;
