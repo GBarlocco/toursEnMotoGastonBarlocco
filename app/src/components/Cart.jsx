@@ -56,12 +56,7 @@ const Cart = () => {
                         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                             <Box marginTop={2} marginLeft={0}>
                                 <Card sx={{ width: 600, position: 'flex' }} >
-                                    <Button
-                                        color='inherit'
-                                        size='large'
-                                        component={NavLink}
-                                        to={'/'}
-                                    >
+                                    <Button color='inherit' size='large' component={NavLink} to={'/'} >
                                         ¡No tienes viajes en el carrito! ¡presiona aquí para obtener uno!
                                     </Button>
                                 </Card>
@@ -75,24 +70,14 @@ const Cart = () => {
                                         <CardActionArea>
                                             <CardContent>
                                                 <Typography gutterBottom variant='h5' > {travel.product.name} </Typography>
-                                                <CardMedia
-                                                    component='img'
-                                                    height='150'
-                                                    image={travel.product.picture}
-                                                    alt={travel.product.name}
-                                                />
+                                                <CardMedia component='img' height='150' image={travel.product.picture} alt={travel.product.name} />
                                                 <Typography variant='body2' color='text.secondary'> Cantidad: {travel.count} </Typography>
                                                 <Typography variant='body2' color='text.secondary'> Precio unitario: $ {travel.product.price}</Typography>
                                                 <Typography variant='body2' color='text.secondary'> TOTAL: $ {travel.product.price * travel.count} </Typography>
                                             </CardContent>
                                         </CardActionArea>
                                         <Box>
-                                            <Button
-                                                color='error'
-                                                size='small'
-                                                variant='outlined'
-                                                onClick={() => removeItem(travel.product, travel.count)}
-                                            >
+                                            <Button color='error' size='small' variant='outlined' onClick={() => removeItem(travel.product, travel.count)}>
                                                 Borrar item
                                             </Button>
                                         </Box>
@@ -115,32 +100,19 @@ const Cart = () => {
                                         <Typography variant='body2' color='text.secondary'> Total: ${total}  </Typography>
                                     </CardActionArea>
                                     <Box>
-                                        <Button
-                                            color='success'
-                                            size='small'
-                                            onClick={clear}
-                                        >
+                                        <Button color='success' size='small' onClick={clear}>
                                             Limpiar carrito
                                         </Button>
                                     </Box>
                                     {
                                         userLog ?
                                             <Box>
-                                                <Button
-                                                    color='info'
-                                                    size='small'
-                                                    onClick={addCart}
-                                                >
+                                                <Button color='info' size='small' onClick={addCart}>
                                                     Finalizar compra
                                                 </Button>
                                             </Box>
                                             :
-                                            <Button
-                                                color='info'
-                                                size='small'
-                                                component={NavLink}
-                                                to={'/Login'}
-                                            >
+                                            <Button color='info' size='small' component={NavLink} to={'/Login'} >
                                                 Estás a un click de cumplir tus sueños!
                                             </Button>
                                     }

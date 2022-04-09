@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
-import { db } from "../firebase/firebase";
-import { getDocs, collection, query, where } from "firebase/firestore";
-import ItemList from "./ItemList";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from '../firebase/firebase';
+import ItemList from './ItemList';
 
 const ItemListContainer = () => {
     const [loading, setLoading] = useState(true);
@@ -11,7 +11,7 @@ const ItemListContainer = () => {
     const { name } = useParams();
 
     const notify = () => {
-        toast.info("Cargando viajes, espere por favor...", { position: "bottom-right", });
+        toast.info('Cargando viajes, espere por favor...', { position: 'bottom-right', });
     }
 
     const infoDB = (props) => {
@@ -26,13 +26,13 @@ const ItemListContainer = () => {
     }
 
     useEffect(() => {
-        const travelCollection = collection(db, "dataTravel");
+        const travelCollection = collection(db, 'dataTravel');
 
         if (!name) {
             const document = getDocs(travelCollection);
             infoDB(document);
         } else {
-            const myFilter = query(travelCollection, where("category", "==", name));
+            const myFilter = query(travelCollection, where('category', '==', name));
             const document = getDocs(myFilter);
             infoDB(document);
         }
