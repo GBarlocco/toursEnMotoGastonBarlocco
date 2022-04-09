@@ -26,9 +26,13 @@ const Cart = () => {
     }
 
     const addCart = () => {
+
+        let userName = "";
+        let userPhone = "";
         (userLog.displayName ? userName = userLog.displayName : userName= "-");
         (userLog.phoneNumber ? userPhone = userLog.phoneNumber : userPhone= "-");
-        
+
+
         const order = {
             buyer: {
                 name: userName,
