@@ -55,7 +55,7 @@ const Cart = () => {
                     (cartCount <= 0 ?
                         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                             <Box marginTop={2} marginLeft={0}>
-                                <Card sx={{ width: 600, position: 'flex' }} >
+                                <Card sx={{ width: 400}}>
                                     <Button color='inherit' size='large' component={NavLink} to={'/'} >
                                         ¡No tienes viajes en el carrito! ¡presiona aquí para obtener uno!
                                     </Button>
@@ -64,7 +64,7 @@ const Cart = () => {
                         </Grid>
                         :
                         cart.map((travel) =>
-                            <Grid item xl={2} lg={3} md={4} sm={6} xs={12}>
+                        <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                                 <Box marginTop={2} marginLeft={0}>
                                     <Card sx={{ width: 240, position: 'flex' }} >
                                         <CardActionArea>
