@@ -10,8 +10,8 @@ const ItemListContainer = () => {
     const [travels, setTravels] = useState([]);
     const { name } = useParams();
 
-    const notify = () => {
-        toast.info('Cargando viajes, espere por favor...', { position: 'bottom-right', });
+    const notify = (props) => {
+        toast.info(`Cargando viajes ${props}, espere por favor...`, { position: 'bottom-right', });
     }
 
     const infoDB = (props) => {
@@ -34,12 +34,13 @@ const ItemListContainer = () => {
         } else {
             const myFilter = query(travelCollection, where('category', '==', name));
             const document = getDocs(myFilter);
+            (name === "basic") ? notify("básicos"): notify("completos");
             infoDB(document);
         }
     }, [name]);
 
     useEffect(() => {
-        if (loading) { notify() }
+        if (loading) { notify("") }
     }, []);
 
     return (
