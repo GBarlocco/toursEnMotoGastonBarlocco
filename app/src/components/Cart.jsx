@@ -1,22 +1,20 @@
 import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid, CardMedia } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { CartContext } from '../context/CartContext';
-import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
 const Cart = () => {
     const { cart, removeItem, clear, total, cartCount } = useContext(CartContext);
     const { userLog } = useContext(AuthContext);
-
     const navigate = useNavigate();
 
     const notify = (props) => {
-        toast.success(`¡Gracias por realizar tu compra! tu ID de rastreo es: ${props}`, { position: "bottom-right", });
-        navigate("/buy/" + props);
+        toast.success(`¡Gracias por realizar tu compra! tu ID de rastreo es: ${props}`, { position: 'bottom-right', });
+        navigate('/buy/' + props);
 
     }
 
@@ -27,11 +25,10 @@ const Cart = () => {
 
     const addCart = () => {
 
-        let userName = "";
-        let userPhone = "";
-        (userLog.displayName ? userName = userLog.displayName : userName = "-");
-        (userLog.phoneNumber ? userPhone = userLog.phoneNumber : userPhone = "-");
-
+        let userName = '';
+        let userPhone = '';
+        (userLog.displayName ? userName = userLog.displayName : userName = '-');
+        (userLog.phoneNumber ? userPhone = userLog.phoneNumber : userPhone = '-');
 
         const order = {
             buyer: {
@@ -44,7 +41,7 @@ const Cart = () => {
             total: total
         }
 
-        const orderCollection = collection(db, "orders");
+        const orderCollection = collection(db, 'orders');
         const newOrder = addDoc(orderCollection, order);
 
         newOrder
@@ -58,12 +55,12 @@ const Cart = () => {
                     (cartCount <= 0 ?
                         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                             <Box marginTop={2} marginLeft={0}>
-                                <Card sx={{ width: 600, position: "flex" }} >
+                                <Card sx={{ width: 600, position: 'flex' }} >
                                     <Button
-                                        color="inherit"
-                                        size="large"
+                                        color='inherit'
+                                        size='large'
                                         component={NavLink}
-                                        to={"/"}
+                                        to={'/'}
                                     >
                                         ¡No tienes viajes en el carrito! ¡presiona aquí para obtener uno!
                                     </Button>
@@ -74,26 +71,26 @@ const Cart = () => {
                         cart.map((travel) =>
                             <Grid item xl={2} lg={3} md={4} sm={6} xs={12}>
                                 <Box marginTop={2} marginLeft={0}>
-                                    <Card sx={{ width: 240, position: "flex" }} >
+                                    <Card sx={{ width: 240, position: 'flex' }} >
                                         <CardActionArea>
                                             <CardContent>
-                                                <Typography gutterBottom variant="h5" > {travel.product.name} </Typography>
+                                                <Typography gutterBottom variant='h5' > {travel.product.name} </Typography>
                                                 <CardMedia
-                                                    component="img"
-                                                    height="150"
+                                                    component='img'
+                                                    height='150'
                                                     image={travel.product.picture}
                                                     alt={travel.product.name}
                                                 />
-                                                <Typography variant="body2" color="text.secondary"> Cantidad: {travel.count} </Typography>
-                                                <Typography variant="body2" color="text.secondary"> Precio unitario: $ {travel.product.price}</Typography>
-                                                <Typography variant="body2" color="text.secondary"> TOTAL: $ {travel.product.price * travel.count} </Typography>
+                                                <Typography variant='body2' color='text.secondary'> Cantidad: {travel.count} </Typography>
+                                                <Typography variant='body2' color='text.secondary'> Precio unitario: $ {travel.product.price}</Typography>
+                                                <Typography variant='body2' color='text.secondary'> TOTAL: $ {travel.product.price * travel.count} </Typography>
                                             </CardContent>
                                         </CardActionArea>
                                         <Box>
                                             <Button
-                                                color="error"
-                                                size="small"
-                                                variant="outlined"
+                                                color='error'
+                                                size='small'
+                                                variant='outlined'
                                                 onClick={() => removeItem(travel.product, travel.count)}
                                             >
                                                 Borrar item
@@ -111,16 +108,16 @@ const Cart = () => {
                     (cartCount > 0 ?
                         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                             <Box marginTop={2} marginLeft={0}>
-                                <Card sx={{ width: 240, position: "flex" }} >
+                                <Card sx={{ width: 240, position: 'flex' }} >
                                     <CardActionArea>
-                                        <Typography gutterBottom variant="h6" > Resumen de compra: </Typography>
-                                        <Typography variant="body2" color="text.secondary"> Cantidad de viajes: {cartCount} </Typography>
-                                        <Typography variant="body2" color="text.secondary"> Total: ${total}  </Typography>
+                                        <Typography gutterBottom variant='h6' > Resumen de compra: </Typography>
+                                        <Typography variant='body2' color='text.secondary'> Cantidad de viajes: {cartCount} </Typography>
+                                        <Typography variant='body2' color='text.secondary'> Total: ${total}  </Typography>
                                     </CardActionArea>
                                     <Box>
                                         <Button
-                                            color="success"
-                                            size="small"
+                                            color='success'
+                                            size='small'
                                             onClick={clear}
                                         >
                                             Limpiar carrito
@@ -130,8 +127,8 @@ const Cart = () => {
                                         userLog ?
                                             <Box>
                                                 <Button
-                                                    color="info"
-                                                    size="small"
+                                                    color='info'
+                                                    size='small'
                                                     onClick={addCart}
                                                 >
                                                     Finalizar compra
@@ -139,10 +136,10 @@ const Cart = () => {
                                             </Box>
                                             :
                                             <Button
-                                                color="info"
-                                                size="small"
+                                                color='info'
+                                                size='small'
                                                 component={NavLink}
-                                                to={"/Login"}
+                                                to={'/Login'}
                                             >
                                                 Estás a un click de cumplir tus sueños!
                                             </Button>
@@ -156,6 +153,6 @@ const Cart = () => {
                 }
             </Grid>
         </>
-    )
+    );
 };
 export default Cart;

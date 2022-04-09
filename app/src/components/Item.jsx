@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 const Item = (props) => {
     return (
         <>
-            <Grid item xl={2} lg={3} md={4} sm={6} xs={12}>
+            <Grid item xl={2} lg={3} md={4} sm={6} xs={6}>
                 <Box marginTop={2} marginLeft={0}>
-                    <Card sx={{ width: 240, position: "flex" }}>
+                    <Card sx={{ width: 230, position: "flex" }}>
                         <CardActionArea>
                             <CardMedia
                                 component="img"

@@ -13,10 +13,10 @@ import { AuthContext } from '../context/AuthContext';
 const Navbar = () => {
     const { userLog } = useContext(AuthContext);
     return (
-        <AppBar position="static">
-            <Toolbar>
+        <AppBar position='static' sm={{ minWidth: 480 }} >
+            <Toolbar >
                 <HomeWidget />
-                <Typography gutterBottom variant="caption"> {userLog ? `¡Bienvenido! ${userLog.email}` : null} </Typography>
+                <Typography gutterBottom variant='caption'> {userLog ? `¡Bienvenido! ${userLog.email}` : null} </Typography>
                 <BasicWidget />
                 <FullWidget />
                 <InfoWidget />

@@ -15,7 +15,7 @@ const HomeWidget = () => {
                         to={"/"}
                         sx={{ flexGrow: 1 }}
                     >
-                        Tours en moto
+                        Tours
                     </Button>
                 </Box>
             </Grid>

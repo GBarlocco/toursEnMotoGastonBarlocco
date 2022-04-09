@@ -1,15 +1,14 @@
-import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid, Container  } from '@mui/material';
-import { NavLink } from 'react-router-dom';
-import { useParams } from "react-router-dom";
-import { AuthContext } from '../context/AuthContext';
+import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid, Container } from '@mui/material';
+import { NavLink, useParams } from 'react-router-dom';
 import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 
 const Buy = () => {
     const { idCompra } = useParams();
     const { userLog } = useContext(AuthContext);
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container component='main' maxWidth='xs'>
             <Grid>
                 <Box
                     sx={{
@@ -22,15 +21,14 @@ const Buy = () => {
                     <Card sx={{ maxWidth: 500 }} >
                         <CardActionArea>
                             <CardContent>
-                                <Typography gutterBottom variant="h6" component="div"> ¡COMPRA REALIZADA CON ÉXITO!</Typography>
-                                <Typography variant="body2" color="text.secondary"> ID de seguimiento: {idCompra} </Typography>
-                                <Typography variant="body2" color="text.secondary"> Correo de contacto: {userLog.email}</Typography>
+                                <Typography gutterBottom variant='h6' component='div'> ¡COMPRA REALIZADA CON ÉXITO!</Typography>
+                                <Typography variant='body2' color='text.secondary'> ID de seguimiento: {idCompra} </Typography>
+                                <Typography variant='body2' color='text.secondary'> Correo de contacto: {userLog.email}</Typography>
                             </CardContent>
                         </CardActionArea>
                     </Card>
                 </Box>
             </Grid>
-
             <Grid>
                 <Box
                     sx={{
@@ -42,11 +40,11 @@ const Buy = () => {
                 >
                     <Card>
                         <Button
-                            variant="outlined"
-                            color="primary"
-                            size="small"
+                            variant='outlined'
+                            color='primary'
+                            size='small'
                             component={NavLink}
-                            to={"/"}
+                            to={'/'}
                         >
                             ¡Sigue disfrutando de nuestras propuestas!
                         </Button>
