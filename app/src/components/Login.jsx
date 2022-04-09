@@ -36,6 +36,7 @@ const Login = () => {
             if (errorCode == 'auth/email-already-in.use') { notifyError('¡El correo ya se encuentra registrado!') };
             if (errorCode == 'auth/wrong-password') { notifyError('¡Contraseña equivocada!, intente nuevamente') };
             if (errorCode == 'auth/too-many-requests') { notifyError('¡Intente más tarde!') };
+            if (errorCode == 'auth/user-not-found' || errorCode == 'auth/internal-error') { notifyError('Usario no registrado'); }
         }
     }
 
