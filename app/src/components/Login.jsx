@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -38,7 +38,7 @@ const Login = () => {
             if (errorCode == "auth/weak-password") { notifyError("la contraseña debe contar con 6 caracteres") };
             if (errorCode == "auth/email-already-in.use") { notifyError("¡El correo ya se encuentra registrado!") };
             if (errorCode == "auth/wrong-password") { notifyError("¡Contraseña equivocada!, intente nuevamente") };
-            if (errorCode == "auth/too-many-requests") { notifyError("¡Intente más tarde!") };  
+            if (errorCode == "auth/too-many-requests") { notifyError("¡Intente más tarde!") };
         }
     }
     return (
@@ -101,7 +101,10 @@ const Login = () => {
                     </Button>
                     <Grid container>
                         <Grid item>
-                            <Link href="#" variant="body2">
+                            <Link
+                                href="#"
+                                variant="body2"
+                            >
                                 {"Login with google"}
                             </Link>
                         </Grid>

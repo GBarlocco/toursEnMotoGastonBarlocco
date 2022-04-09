@@ -21,7 +21,6 @@ const ItemListContainer = () => {
             })
             .finally(() => {
                 setLoading(false);
-                toast.dismiss();
             })
     }
 

@@ -7,7 +7,6 @@ export const AuthContext = createContext();
 const { Provider } = AuthContext;
 
 export const AuthContextProvider = ({ children }) => {
-
     const [userLog, setUserLog] = useState(null);
 
     const registerUser = (email, password) => {
@@ -27,7 +26,6 @@ export const AuthContextProvider = ({ children }) => {
             setUserLog(currentUser);
         });
     }, [])
-
 
     return (
         <Provider
