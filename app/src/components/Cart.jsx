@@ -5,10 +5,12 @@ import { toast } from 'react-toastify';
 import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { CartContext } from '../context/CartContext';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 const Cart = () => {
     const { cart, removeItem, clear, total, cartCount } = useContext(CartContext);
+    const { userLog } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -24,11 +26,14 @@ const Cart = () => {
     }
 
     const addCart = () => {
+        (userLog.displayName ? userName = userLog.displayName : userName= "-");
+        (userLog.phoneNumber ? userPhone = userLog.phoneNumber : userPhone= "-");
+        
         const order = {
             buyer: {
-                name: "Gastón",
-                phone: "123456",
-                email: "asdasd@asdasd.com"
+                name: userName,
+                phone: userPhone,
+                email: userLog.email
             },
             items: cart,
             data: serverTimestamp(),

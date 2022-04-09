@@ -1,4 +1,4 @@
-import { Avatar, Button, TextField, FormControlLabel, Link, Checkbox, Grid, Box, Typography, Container } from '@mui/material';
+import { Avatar, Button, TextField, Link, Grid, Box, Typography, Container } from '@mui/material';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import { NavLink } from "react-router-dom";
 import { useState, useContext } from 'react';
@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-    const { login, userLog } = useContext(AuthContext);
+    const { login, userLog, loginWithGoogle } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -40,6 +40,11 @@ const Login = () => {
             if (errorCode == "auth/wrong-password") { notifyError("¡Contraseña equivocada!, intente nuevamente") };
             if (errorCode == "auth/too-many-requests") { notifyError("¡Intente más tarde!") };
         }
+    }
+
+    const handleGoogleLogin = async () =>{
+        await loginWithGoogle();
+        navigate("/");
     }
     return (
 
@@ -104,6 +109,7 @@ const Login = () => {
                             <Link
                                 href="#"
                                 variant="body2"
+                                onClick = {handleGoogleLogin} 
                             >
                                 {"Login with google"}
                             </Link>
