@@ -40,32 +40,19 @@ Proyecto ECOMMERCE en React Js.
 ## Instaladores
 
 Material UI:
-```
-npm i @mui/material 
-
-```
+``` npm i @mui/material  ```
 
 Icons:
-```
-npm i @mui/icons-material
-
-```
+``` npm i @mui/icons-material ```
 
 Fuente Roboto, agregar en index.html:
-```
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-
-```
+``` <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" /> ```
 
 Notificaciones:
-```
-npm i react-toastify
-```
+``` npm i react-toastify ```
 
 Router:
-```
-npm i react-router-dom
-```
+``` npm i react-router-dom ```
 
 
 ## Comandos
