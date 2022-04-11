@@ -1,7 +1,7 @@
 # MOTO TRAVEL :motorcycle:
 
 *<p>[DEMO](https://mototravelgastonbarlocco.netlify.app)*</p>
-*<p>[VIDEO](https://www.youtube.com/watch?v=OtUsP7-1rp8)*</p>
+*<p>[VIDEO](https://youtube.com/watch?v=OtUsP7-1rp8)*</p>
 
 ## Introducción
 Proyecto ECOMMERCE en React Js.
