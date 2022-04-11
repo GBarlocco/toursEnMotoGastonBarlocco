@@ -1,17 +1,16 @@
 # MOTO TRAVEL :motorcycle:
 
 *<p>[DEMO](https://mototravelgastonbarlocco.netlify.app)*</p>
-*<p>[VIDEO](/)*</p>
+*<p>[VIDEO](https://www.youtube.com/watch?v=OtUsP7-1rp8)*</p>
 
 ## Introducción
 Proyecto ECOMMERCE en React Js.
 
 ## Visualización
 [![web1.png](https://i.postimg.cc/4dh3hhNZ/web1.png)](https://postimg.cc/Q9hD2CTn)
-
 [![web2.png](https://i.postimg.cc/gkp0nj9F/web2.png)](https://postimg.cc/grMp7YkN)
-
 [![web3.png](https://i.postimg.cc/QNJ3Yqzw/web3.png)](https://postimg.cc/4nyqmpsQ)
+
 
 ## Academia
 > [CODERHOUSE](https://www.coderhouse.com.uy)
@@ -29,7 +28,7 @@ Proyecto ECOMMERCE en React Js.
 
 ## Autor
 > <p>Gastón Barlocco. </p>
-> <p>email: barlocco@hotmail.es </p>
+> <p>Email: barlocco@hotmail.es </p>
 
 
 ## Librerías principales utilizadas en el proeycto
@@ -75,7 +74,6 @@ Router:
 ``` 
 npm i react-router-dom 
 ```
-
 
 ## Comandos
 
