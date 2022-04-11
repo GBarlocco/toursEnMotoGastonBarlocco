@@ -1,6 +1,7 @@
 # MOTO TRAVEL :motorcycle:
 
 *[DEMO](https://mototravelgastonbarlocco.netlify.app)*
+*[VIDEO](/)*
 
 ## Introducción
 Proyecto ECOMMERCE en React Js.
@@ -15,14 +16,15 @@ Proyecto ECOMMERCE en React Js.
 
 
 ## Profesor & tutor
-> Grupo: 25470.
-> Profesor: Horacio Gutierrez.
-> Tutor: Braian Vaylet.
+<p> > Grupo: 25470.</p>
+<p> > Profesor: Horacio Gutierrez.</p> 
+<p> > Tutor: Braian Vaylet.</p> 
 
 
 ## Autor
 > Gastón Barlocco.
-> barlocco@hotmail.es > [linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)
+> barlocco@hotmail.es
+>[linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)
 
 
 ## Librerías principales utilizadas en el proeycto
