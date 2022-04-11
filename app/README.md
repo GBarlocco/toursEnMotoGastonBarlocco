@@ -1,27 +1,27 @@
 # MOTO TRAVEL :motorcycle:
 
-**[DEMO](https://mototravelgastonbarlocco.netlify.app)**
+*[DEMO](https://mototravelgastonbarlocco.netlify.app)*
 
 ## Introducción
-Proyecto ECOMMERCE en React Js
+Proyecto ECOMMERCE en React Js.
 
 
 ## Academia
-* [CODERHOUSE](https://www.coderhouse.com.uy)
+> [CODERHOUSE](https://www.coderhouse.com.uy)
 
 
 ## Curso
-* [React Js](https://www.coderhouse.com.uy/online/reactjs)
+> [React Js](https://www.coderhouse.com.uy/online/reactjs)
 
 
 ## Profesor & tutor
-> Grupo: 25470
-> Profesor: Horacio Gutierrez
-> Tutor: Braian Vaylet
+> Grupo: 25470.
+> Profesor: Horacio Gutierrez.
+> Tutor: Braian Vaylet.
 
 
 ## Autor
-> Gastón Barlocco
+> Gastón Barlocco.
 > barlocco@hotmail.es > [linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)
 
 
