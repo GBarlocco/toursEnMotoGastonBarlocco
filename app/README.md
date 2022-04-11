@@ -25,7 +25,7 @@ Proyecto ECOMMERCE en React Js.
 > barlocco@hotmail.es > [linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)
 
 
-### Librerías principales utilizadas en el proeycto
+## Librerías principales utilizadas en el proeycto
 
 | Librería                                                         | Descripción               |
 | ---------------------------------------------------------------- | ------------------------- |
