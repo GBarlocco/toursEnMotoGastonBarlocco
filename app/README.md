@@ -8,7 +8,7 @@ Proyecto ECOMMERCE en React Js.
 
 
 ## Academia
-> <p>[CODERHOUSE](https://www.coderhouse.com.uy)</p>
+<p>> [CODERHOUSE](https://www.coderhouse.com.uy)</p>
 
 
 ## Curso
