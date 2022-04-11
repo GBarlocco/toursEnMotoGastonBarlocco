@@ -38,6 +38,7 @@ export const CartContextProvider = ({ children }) => {
     const clear = () => {
         setCart([]);
         setcartCount(0);
+        setTotal(0);
     }
 
     const isInCart = (product) => {

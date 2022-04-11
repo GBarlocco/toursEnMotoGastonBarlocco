@@ -1,4 +1,4 @@
-import { Button, Card, CardActionArea, Typography, CardContent, Box, Grid, CardMedia } from '@mui/material';
+import { Button, Card, Typography, CardContent, Box, Grid, CardMedia } from '@mui/material';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { toast } from 'react-toastify';
@@ -19,12 +19,11 @@ const Cart = () => {
     }
 
     const cleanCart = (props) => {
-        notify(props);
         clear();
+        notify(props);
     }
 
     const addCart = () => {
-
         let userName = '';
         let userPhone = '';
         (userLog.displayName ? userName = userLog.displayName : userName = '-');
@@ -55,7 +54,7 @@ const Cart = () => {
                     (cartCount <= 0 ?
                         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                             <Box marginTop={2} marginLeft={0}>
-                                <Card sx={{ width: 400}}>
+                                <Card sx={{ width: 400 }}>
                                     <Button color='inherit' size='large' component={NavLink} to={'/'} >
                                         ¡No tienes viajes en el carrito! ¡presiona aquí para obtener uno!
                                     </Button>
@@ -64,18 +63,16 @@ const Cart = () => {
                         </Grid>
                         :
                         cart.map((travel) =>
-                        <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
+                            <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                                 <Box marginTop={2} marginLeft={0}>
                                     <Card sx={{ width: 240, position: 'flex' }} >
-                                        <CardActionArea>
-                                            <CardContent>
-                                                <Typography gutterBottom variant='h5' > {travel.product.name} </Typography>
-                                                <CardMedia component='img' height='150' image={travel.product.picture} alt={travel.product.name} />
-                                                <Typography variant='body2' color='text.secondary'> Cantidad: {travel.count} </Typography>
-                                                <Typography variant='body2' color='text.secondary'> Precio unitario: $ {travel.product.price}</Typography>
-                                                <Typography variant='body2' color='text.secondary'> TOTAL: $ {travel.product.price * travel.count} </Typography>
-                                            </CardContent>
-                                        </CardActionArea>
+                                        <CardContent>
+                                            <Typography gutterBottom variant='h5' > {travel.product.name} </Typography>
+                                            <CardMedia component='img' height='150' image={travel.product.picture} alt={travel.product.name} />
+                                            <Typography variant='body2' color='text.secondary'> Cantidad: {travel.count} </Typography>
+                                            <Typography variant='body2' color='text.secondary'> Precio unitario: $ {travel.product.price}</Typography>
+                                            <Typography variant='body2' color='text.secondary'> TOTAL: $ {travel.product.price * travel.count} </Typography>
+                                        </CardContent>
                                         <Box>
                                             <Button color='error' size='small' variant='outlined' onClick={() => removeItem(travel.product, travel.count)}>
                                                 Borrar item
@@ -94,11 +91,9 @@ const Cart = () => {
                         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} >
                             <Box marginTop={2} marginLeft={0}>
                                 <Card sx={{ width: 240, position: 'flex' }} >
-                                    <CardActionArea>
-                                        <Typography gutterBottom variant='h6' > Resumen de compra: </Typography>
-                                        <Typography variant='body2' color='text.secondary'> Cantidad de viajes: {cartCount} </Typography>
-                                        <Typography variant='body2' color='text.secondary'> Total: ${total}  </Typography>
-                                    </CardActionArea>
+                                    <Typography gutterBottom variant='h6' > Resumen de compra: </Typography>
+                                    <Typography variant='body2' color='text.secondary'> Cantidad de viajes: {cartCount} </Typography>
+                                    <Typography variant='body2' color='text.secondary'> Total: ${total}  </Typography>
                                     <Box>
                                         <Button color='success' size='small' onClick={clear}>
                                             Limpiar carrito
