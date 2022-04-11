@@ -16,7 +16,7 @@ Proyecto ECOMMERCE en React Js.
 
 
 ## Profesor & tutor
-<p> > Grupo: 25470.</p>
+ > <p>Grupo: 25470.</p>
 <p> > Profesor: Horacio Gutierrez.</p> 
 <p> > Tutor: Braian Vaylet.</p> 
 
