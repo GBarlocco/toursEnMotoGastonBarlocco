@@ -23,8 +23,8 @@ Proyecto ECOMMERCE en React Js.
 
 ## Autor
 > <p>Gastón Barlocco. </p>
-> <p>barlocco@hotmail.es </p>
-> [linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)
+> <p>email: barlocco@hotmail.es </p>
+
 
 ## Librerías principales utilizadas en el proeycto
 
@@ -35,3 +35,45 @@ Proyecto ECOMMERCE en React Js.
 | [Material  UI](https://mui.com)                                  | UI framework              |
 | [Firebase](https://firebase.google.com/?hl=es)                   | Authentication & DataBase |
 | [React Router](https://reactrouter.com/)                         | Router                    |
+
+
+## Instaladores
+
+Material UI:
+```
+npm i @mui/material 
+
+```
+
+Icons:
+```
+npm i @mui/icons-material
+
+```
+
+Fuente Roboto, agregar en index.html:
+```
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+
+```
+
+Notificaciones:
+```
+npm i react-toastify
+```
+
+Router:
+```
+npm i react-router-dom
+```
+
+
+## Comandos
+
+### `npm start`
+Abrir la app de forma local
+[http://localhost:3000](http://localhost:3000) para visualizar en el navegador.
+
+
+## Extra
+Documentación de React js [React documentation](https://reactjs.org/).
