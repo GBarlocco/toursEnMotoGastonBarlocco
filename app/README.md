@@ -6,6 +6,8 @@
 ## Introducción
 Proyecto ECOMMERCE en React Js.
 
+## Visualización
+Proyecto ECOMMERCE en React Js.
 
 ## Academia
 > [CODERHOUSE](https://www.coderhouse.com.uy)
@@ -73,10 +75,13 @@ npm i react-router-dom
 
 ## Comandos
 
-### `npm start`
-Abrir la app de forma local
+#### `npm start`
+Ejecutar la app de forma local
 [http://localhost:3000](http://localhost:3000) para visualizar en el navegador.
+
+#### `npm run build`
+Para construir los ficheros finales para subir a la web de producción. 
 
 
 ## Extra
-Documentación de React js [React documentation](https://reactjs.org/).
+[Documentación](https://reactjs.org/) de React js.
