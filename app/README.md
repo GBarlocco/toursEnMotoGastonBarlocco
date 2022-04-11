@@ -7,7 +7,8 @@
 Proyecto ECOMMERCE en React Js.
 
 ## Visualización
-Proyecto ECOMMERCE en React Js.
+[![web1.png](https://i.postimg.cc/4dh3hhNZ/web1.png)](https://postimg.cc/Q9hD2CTn)
+[![web2.png](https://i.postimg.cc/gkp0nj9F/web2.png)](https://postimg.cc/grMp7YkN)
 
 ## Academia
 > [CODERHOUSE](https://www.coderhouse.com.uy)

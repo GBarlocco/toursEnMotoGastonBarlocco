@@ -101,11 +101,18 @@ const Cart = () => {
                                     </Box>
                                     {
                                         userLog ?
-                                            <Box>
-                                                <Button color='info' size='small' onClick={addCart}>
-                                                    Finalizar compra
-                                                </Button>
-                                            </Box>
+                                            <>
+                                                <Box>
+                                                    <Button color='info' size='small' component={NavLink} to={'/'} >
+                                                        ¡Sigue eligiendo más viajes!
+                                                    </Button>
+                                                </Box>
+                                                <Box>
+                                                    <Button color='info' size='small' onClick={addCart}>
+                                                        Finalizar compra
+                                                    </Button>
+                                                </Box>
+                                            </>
                                             :
                                             <Button color='info' size='small' component={NavLink} to={'/Login'} >
                                                 Estás a un click de cumplir tus sueños!
