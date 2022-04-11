@@ -8,11 +8,11 @@ Proyecto ECOMMERCE en React Js.
 
 
 ## Academia
-<p>> [CODERHOUSE](https://www.coderhouse.com.uy)</p>
+> [CODERHOUSE](https://www.coderhouse.com.uy)
 
 
 ## Curso
-> <p>[React Js](https://www.coderhouse.com.uy/online/reactjs)</p>
+> [React Js](https://www.coderhouse.com.uy/online/reactjs)
 
 
 ## Profesor & tutor
@@ -24,7 +24,7 @@ Proyecto ECOMMERCE en React Js.
 ## Autor
 > <p>Gastón Barlocco.</p>
 > <p>barlocco@hotmail.es</p>
-><p>[linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)</p>
+>[linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)
 
 
 ## Librerías principales utilizadas en el proeycto
