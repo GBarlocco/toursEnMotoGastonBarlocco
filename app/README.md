@@ -26,7 +26,7 @@ ECOMMERCE proyect in React Js
 > <p>Tutor: Braian Vaylet.</p> 
 
 
-## Autor
+## Author
 > <p>Gastón Barlocco. </p>
 > <p>Email: barlocco@hotmail.es </p>
 
