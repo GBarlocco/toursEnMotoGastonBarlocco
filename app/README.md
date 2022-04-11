@@ -8,23 +8,23 @@ Proyecto ECOMMERCE en React Js.
 
 
 ## Academia
-> [CODERHOUSE](https://www.coderhouse.com.uy)
+> <p>[CODERHOUSE](https://www.coderhouse.com.uy)</p>
 
 
 ## Curso
-> [React Js](https://www.coderhouse.com.uy/online/reactjs)
+> <p>[React Js](https://www.coderhouse.com.uy/online/reactjs)</p>
 
 
 ## Profesor & tutor
- > <p>Grupo: 25470.</p>
-<p> > Profesor: Horacio Gutierrez.</p> 
-<p> > Tutor: Braian Vaylet.</p> 
+> <p>Grupo: 25470.</p>
+> <p>Profesor: Horacio Gutierre.z</p>
+> <p>Tutor: Braian Vaylet.</p> 
 
 
 ## Autor
-> Gastón Barlocco.
-> barlocco@hotmail.es
->[linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)
+> <p>Gastón Barlocco.</p>
+> <p>barlocco@hotmail.es</p>
+><p>[linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)</p>
 
 
 ## Librerías principales utilizadas en el proeycto
