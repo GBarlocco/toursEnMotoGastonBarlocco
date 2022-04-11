@@ -24,7 +24,7 @@ Proyecto ECOMMERCE en React Js.
 ## Autor
 > <p>Gastón Barlocco.</p>
 > <p>barlocco@hotmail.es</p>
->[linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)
+> [linkedin](https://www.linkedin.com/in/gastón-barlocco-315756148/)
 
 
 ## Librerías principales utilizadas en el proeycto
