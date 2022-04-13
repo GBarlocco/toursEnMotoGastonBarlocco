@@ -74,7 +74,12 @@ const Cart = () => {
                                             <Typography variant='body2' color='text.secondary'> TOTAL: $ {travel.product.price * travel.count} </Typography>
                                         </CardContent>
                                         <Box>
-                                            <Button color='error' size='small' variant='outlined' onClick={() => removeItem(travel.product, travel.count)}>
+                                            <Button
+                                                color='error'
+                                                size='small'
+                                                variant='outlined'
+                                                onClick={() => removeItem(travel.product, travel.count)}
+                                            >
                                                 Borrar item
                                             </Button>
                                         </Box>
@@ -103,18 +108,31 @@ const Cart = () => {
                                         userLog ?
                                             <>
                                                 <Box>
-                                                    <Button color='info' size='small' component={NavLink} to={'/'} >
+                                                    <Button
+                                                        color='info'
+                                                        size='small'
+                                                        component={NavLink} to={'/'}
+                                                    >
                                                         ¡Sigue eligiendo más viajes!
                                                     </Button>
                                                 </Box>
                                                 <Box>
-                                                    <Button color='info' size='small' onClick={addCart}>
+                                                    <Button
+                                                        color='info'
+                                                        size='small'
+                                                        onClick={addCart}
+                                                    >
                                                         Finalizar compra
                                                     </Button>
                                                 </Box>
                                             </>
                                             :
-                                            <Button color='info' size='small' component={NavLink} to={'/Login'} >
+                                            <Button
+                                                color='info'
+                                                size='small'
+                                                component={NavLink}
+                                                to={'/Login'}
+                                            >
                                                 Estás a un click de cumplir tus sueños!
                                             </Button>
                                     }

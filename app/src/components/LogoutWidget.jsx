@@ -21,7 +21,12 @@ const LogoutWidget = () => {
 
     return (
         <Box>
-            <Button color='inherit' startIcon={<LogoutIcon />} size='small' onClick={handleLogout} />
+            <Button
+                color='inherit'
+                startIcon={<LogoutIcon />}
+                size='small'
+                onClick={handleLogout}
+            />
         </Box>
     );
 };

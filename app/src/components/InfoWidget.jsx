@@ -5,7 +5,13 @@ import InfoIcon from '@mui/icons-material/Info';
 const InfoWidget = () => {
     return (
         <Box>
-            <Button color='inherit' startIcon={<InfoIcon />} size='small' component={NavLink} to={'info'} />
+            <Button
+                color='inherit'
+                startIcon={<InfoIcon />}
+                size='small'
+                component={NavLink}
+                to={'info'}
+            />
         </Box>
     );
 };

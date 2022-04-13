@@ -26,7 +26,13 @@ const Buy = () => {
                 <Box
                     sx={{ marginTop: 3, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Card>
-                        <Button variant='outlined' color='primary' size='small' component={NavLink} to={'/'} >
+                        <Button
+                            variant='outlined'
+                            color='primary'
+                            size='small'
+                            component={NavLink}
+                            to={'/'}
+                        >
                             ¡Sigue disfrutando de nuestras propuestas!
                         </Button>
                     </Card>

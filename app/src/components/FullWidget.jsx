@@ -7,7 +7,13 @@ const FullWidget = () => {
         <Grid>
             <Grid>
                 <Box>
-                    <Button color='inherit' size='small' component={NavLink} to={'/category/full'} startIcon={<TwoWheelerIcon />} />
+                    <Button
+                        color='inherit'
+                        size='small'
+                        component={NavLink}
+                        to={'/category/full'}
+                        startIcon={<TwoWheelerIcon />}
+                    />
                 </Box>
             </Grid>
         </Grid>

@@ -10,8 +10,17 @@ const CartWidget = () => {
 
     return (
         <Box>
-            <Button color='inherit' startIcon={<ShoppingCartIcon />} size='small' component={NavLink} to={'cart'} >
-                <Badge badgeContent={cartCount} color='info' size='small' />
+            <Button
+                color='inherit'
+                startIcon={<ShoppingCartIcon />}
+                size='small'
+                component={NavLink}
+                to={'cart'}
+            >
+                <Badge
+                    badgeContent={cartCount}
+                    color='info'
+                    size='small' />
             </Button>
         </Box>
     );

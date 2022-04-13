@@ -6,7 +6,13 @@ const BasicWidget = () => {
     return (
         <Grid>
             <Box>
-                <Button color='inherit' size='small' component={NavLink} to={'/category/basic'} startIcon={<MopedIcon />} />
+                <Button
+                    color='inherit'
+                    size='small'
+                    component={NavLink}
+                    to={'/category/basic'}
+                    startIcon={<MopedIcon />}
+                />
             </Box>
         </Grid>
     );

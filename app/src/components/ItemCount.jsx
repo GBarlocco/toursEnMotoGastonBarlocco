@@ -14,23 +14,46 @@ const ItemCount = (props) => {
     return (
         <Grid>
             <Box>
-                <Button variant='outlined' color='primary' size='small' >
+                <Button
+                    variant='outlined'
+                    color='primary'
+                    size='small'
+                >
                     Lugares disponibles: {props.participants}
                 </Button>
             </Box>
             <Box>
-                <Button variant='outlined' color='primary' size='small' onClick={downCounter} >
+                <Button
+                    variant='outlined'
+                    color='primary'
+                    size='small'
+                    onClick={downCounter}
+                >
                     -
                 </Button>
-                <Button variant='outlined' color='primary' size='small' >
+                <Button
+                    variant='outlined'
+                    color='primary'
+                    size='small'
+                >
                     {actualValueCounter()}
                 </Button>
-                <Button variant='outlined' color='primary' size='small' onClick={uppCounter} >
+                <Button
+                    variant='outlined'
+                    color='primary'
+                    size='small'
+                    onClick={uppCounter}
+                >
                     +
                 </Button>
             </Box>
             <Box>
-                <Button variant='outlined' color='primary' size='small' onClick={addItem} >
+                <Button
+                    variant='outlined'
+                    color='primary'
+                    size='small'
+                    onClick={addItem}
+                >
                     Agregar al carrito
                 </Button>
             </Box>
