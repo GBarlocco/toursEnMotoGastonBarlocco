@@ -47,7 +47,7 @@ eCommerce Website [React.js]
 
 Create react App:
 ``` 
-npm i @mui/material  
+npm i create-react-app
 ```
 
 Material UI:
