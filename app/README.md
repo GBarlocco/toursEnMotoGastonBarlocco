@@ -4,7 +4,7 @@
 *<p>[VIDEO](https://youtube.com/watch?v=OtUsP7-1rp8)*</p>
 
 ## Introduction
-ECOMMERCE proyect in React Js
+eCommerce Website [React.js]
 
 ## App
 [![web1.png](https://i.postimg.cc/4dh3hhNZ/web1.png)](https://postimg.cc/Q9hD2CTn)
